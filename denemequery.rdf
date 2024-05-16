@@ -1,0 +1,2442 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/"
+     xml:base="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasAbout -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasAbout">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/About"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasAboutUs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasAboutUs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/About"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#AboutUs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasAdult -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasAdult">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Adult"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasAmenities -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasAmenities">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Amenities"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasArrival -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasArrival">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Arrival"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasBookButton -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasBookButton">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasCAD -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasCAD">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CAD"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasCancellationPolicy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasCancellationPolicy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CancellationPolicy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasCapacity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasCapacity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Capacity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasChatbot -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasChatbot">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserExperience"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Chatbot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasChildren -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasChildren">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Children"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasContact -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasContact">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Contact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasCookiePolicy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasCookiePolicy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CookiePolicy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasCurrency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasCurrency">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasDeparture -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasDeparture">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Departure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasDescription -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Description"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasDeutsch -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasDeutsch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Deutsch"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasEUR -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasEUR">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#EUR"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasEnglish -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasEnglish">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/English"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasEspañol -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasEspañol">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Español"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasFacebook -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasFacebook">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SocialMedia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Facebook"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasFeedbackSurvey -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasFeedbackSurvey">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Form"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#FeedbackSurvey"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasForm -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasForm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Form"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasGBP -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasGBP">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#GBP"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasGallery -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasGallery">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Gallery"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasHotelPolicies -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasHotelPolicies">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasHotelPolicy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasHotelPolicy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasInstagram -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasInstagram">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SocialMedia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Instagram"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasItaliano -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasItaliano">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Italiano"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasLanguage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasLanguage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/About"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasMail -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasMail">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Contact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Mail"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasMap -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasMap">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Map"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasPhone -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasPhone">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Contact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Phone"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasPhoto -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasPhoto">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Photo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasPrice -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasPrice">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Price"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasPrivacyPolicy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasPrivacyPolicy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#PrivacyPolicy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasQuestionForm -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasQuestionForm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Form"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#QuestionForm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasReservation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasReservation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasReview -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasReview">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Review"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasRoom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasRoom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasRoomName -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasRoomName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#RoomName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasSearchbar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasSearchbar">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Searchbar"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasSecurityCertificate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasSecurityCertificate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Security"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasSlider -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasSlider">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Slider"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasSocialMedia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasSocialMedia">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SocialMedia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasSpecialOffer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasSpecialOffer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SpecialOffer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasTL -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasTL">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TL"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasTripAdvisor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasTripAdvisor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Review"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TripAdvisor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasTwitter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasTwitter">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SocialMedia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Twitter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasTürkçe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasTürkçe">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Türkçe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasUSD -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasUSD">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#USD"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasUserExperience -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasUserExperience">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserExperience"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasUserInterface -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasUserInterface">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasVideo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasVideo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Video"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasVirtualTour -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasVirtualTour">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserExperience"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#VirtualTour"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasWeather -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasWeather">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserExperience"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Weather"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasWhatsapp -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasWhatsapp">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Contact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Whatsapp"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasРусский -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasРусский">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Русский"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasعربي -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hasعربي">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#عربي"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#aboutUsDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#aboutUsDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#AboutUs"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#adultCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#adultCount">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Adult"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#amenitiesDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#amenitiesDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Amenities"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#arrivalDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#arrivalDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Arrival"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#bookButtonDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#bookButtonDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cancellationPolicy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cancellationPolicy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CancellationPolicy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#capacityDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#capacityDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Capacity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#certificateType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#certificateType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Security"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#chatbotDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#chatbotDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Chatbot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#childrenCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#childrenCount">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Children"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cookiePolicy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cookiePolicy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CookiePolicy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#currencyCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#currencyCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#departureDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#departureDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Departure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#descriptionDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#descriptionDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Description"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#facebookLink -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#facebookLink">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Facebook"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#formType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#formType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Form"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#galleryType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#galleryType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Gallery"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hotelPolicy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hotelPolicy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#instagramLink -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#instagramLink">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Instagram"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#languageName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#languageName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#locationDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#locationDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Location"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#mailDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#mailDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Mail"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#mapLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#mapLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Map"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#offerDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#offerDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SpecialOffer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#phoneDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#phoneDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Phone"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#photoDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#photoDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Photo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#priceDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#priceDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Price"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#privacyPolicy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#privacyPolicy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#PrivacyPolicy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#roomName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#roomName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#RoomName"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#searchbarDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#searchbarDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Searchbar"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#sliderDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#sliderDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Slider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#tripAdvisorReview -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#tripAdvisorReview">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TripAdvisor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#twitterLink -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#twitterLink">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Twitter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#videoDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#videoDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Video"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#virtualTourDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#virtualTourDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#VirtualTour"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#weatherDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#weatherDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Weather"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#whatsappDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#whatsappDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Whatsapp"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#AboutUs -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#AboutUs">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/About"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Amenities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Amenities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CAD -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CAD">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Calendar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Calendar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CancellationPolicy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CancellationPolicy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Capacity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Capacity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Chatbot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Chatbot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CookiePolicy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CookiePolicy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Description -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Description">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Deutsch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Deutsch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#EUR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#EUR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Español -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Español">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Facebook -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Facebook">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SocialMedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#FeedbackSurvey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#FeedbackSurvey">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Form"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Form -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Form">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#GBP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#GBP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Gallery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Gallery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Instagram -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Instagram">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SocialMedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Italiano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Italiano">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Location">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/About"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Mail -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Mail">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Contact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Map -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Map">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Phone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Phone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Contact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Photo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Photo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Price -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Price">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#PrivacyPolicy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#PrivacyPolicy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#QuestionForm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#QuestionForm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Form"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Review -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Review">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#RoomName -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#RoomName">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Searchbar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Searchbar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Security -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Security">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Slider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Slider">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SocialMedia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SocialMedia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SpecialOffer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SpecialOffer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TL -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TL">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TripAdvisor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TripAdvisor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Review"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Twitter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Twitter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SocialMedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Türkçe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Türkçe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#USD -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#USD">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserExperience -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserExperience">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Video -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Video">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#VirtualTour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#VirtualTour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Weather -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Weather">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserExperience"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Whatsapp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Whatsapp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Contact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Русский -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Русский">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#عربي -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#عربي">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/About -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/About">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Adult -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Adult">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Arrival -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Arrival">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Children -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Children">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Contact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Contact">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Departure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Departure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/English -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/English">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Hotel"/>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#AR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#AR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#عربي"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CAD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CAD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CAD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#DE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#DE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Deutsch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Deutsch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Deutsch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Deutsch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#EN -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#EN">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/English"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#ES -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#ES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Español"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#EUR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#EUR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#EUR"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#English -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#English">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/English"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#GBP -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#GBP">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#GBP"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#ITA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#ITA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Italiano"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#RU -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#RU">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Русский"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Türkçe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TRY -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TRY">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Türkçe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Türkçe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Türkçe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#USD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#USD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#USD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#about-us -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#about-us">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#AboutUs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#about_us -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#about_us">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#AboutUs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#aboutus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#aboutus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#AboutUs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#address -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#address"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#adult -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#adult">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Adult"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#amenities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#amenities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Amenities"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#amenity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#amenity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Amenities"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#arabic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#arabic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#عربي"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#arrival -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#arrival">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Arrival"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#bookbutton -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#bookbutton">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#booking -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#booking">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#calendar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#calendar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Calendar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cancellation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cancellation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CancellationPolicy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cancellation_policy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cancellation_policy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CancellationPolicy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cancellationpolicy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cancellationpolicy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CancellationPolicy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#chatbot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#chatbot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Chatbot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#check-in -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#check-in">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Arrival"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#check-out -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#check-out">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Departure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#checkin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#checkin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Arrival"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#checkout -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#checkout">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Departure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#children -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#children">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Children"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#contact_form -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#contact_form"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#contactform -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#contactform"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cookie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cookie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CookiePolicy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cookie_policy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#cookie_policy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CookiePolicy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#currency -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#currency">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#datepicker -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#datepicker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Calendar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#departure -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#departure">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Departure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#description -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#description">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#details -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#details">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Description"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#dollar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#dollar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#USD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#e-mail -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#e-mail">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Mail"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#email -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#email">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Mail"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#euro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#euro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#EUR"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#facebook -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#facebook">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Facebook"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#facilites -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#facilites">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Amenities"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#facility -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#facility">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Amenities"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#feature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#feature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Amenities"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#feedback -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#feedback">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#FeedbackSurvey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#feedback_form -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#feedback_form">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#FeedbackSurvey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#feedbackform -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#feedbackform">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#FeedbackSurvey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#forecast -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#forecast">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Weather"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#gallery -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#gallery">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Gallery"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#googlemaps -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#googlemaps">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Map"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hotel_policy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#hotel_policy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#instagram -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#instagram">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Instagram"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#italiano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#italiano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Italiano"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#journal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#journal"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#lira -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#lira">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#location -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#location">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#mail -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#mail">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Mail"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#map -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#map">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Map"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#mission -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#mission"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#mobile -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#mobile">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Phone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#newsletter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#newsletter"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#offer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#offer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SpecialOffer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#phone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#phone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Phone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#photo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#photo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Photo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#policies -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#policies">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#policy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#policy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#privacy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#privacy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#PrivacyPolicy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#privacy_policy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#privacy_policy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#PrivacyPolicy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#privacypolicy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#privacypolicy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#PrivacyPolicy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#quesitonform -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#quesitonform">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#QuestionForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#question -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#question">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#QuestionForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#question_form -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#question_form">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#QuestionForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#reservation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#reservation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#reservation_form -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#reservation_form">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#review -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#review">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Review"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#rezformbtn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#rezformbtn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#russian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#russian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Русский"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#search_bar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#search_bar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Searchbar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#searchbar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#searchbar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Searchbar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#slider -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#slider">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Slider"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#spanish -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#spanish">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Español"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#special_offer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#special_offer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SpecialOffer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#specialoffer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#specialoffer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SpecialOffer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#subscribe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#subscribe"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#subscription -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#subscription"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#survey -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#survey">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#FeedbackSurvey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#tel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#tel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Phone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#telephone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#telephone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Phone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#testimonial -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#testimonial">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Review"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#tour -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#tour">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#VirtualTour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#tripadvisor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#tripadvisor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TripAdvisor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#twitter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#twitter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Twitter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#video -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#video">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Photo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#virtual_tour -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#virtual_tour">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#VirtualTour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#virtualtour -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#virtualtour">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#VirtualTour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#weather -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#weather">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Weather"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#weather_forecast -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#weather_forecast">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Weather"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#whatsapp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#whatsapp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Whatsapp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CAD"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#EUR"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#GBP"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#TL"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#USD"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Chatbot"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#VirtualTour"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Weather"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Currency"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Form"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Gallery"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicies"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Map"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Review"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Security"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SocialMedia"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#SpecialOffer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserExperience"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/About"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Contact"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Reservation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Photo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Searchbar"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Slider"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
