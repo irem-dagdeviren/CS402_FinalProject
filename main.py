@@ -89,18 +89,21 @@ def main():
         category_map = {}
         for item in items:
             print(item)
-            if item == "AboutUs" and np.isin(0, labels_found):
-                category_map[item] = 1
-            elif item == "Amenities" and np.isin(1, labels_found):
-                category_map[item] = 1
-            elif item == "Location" and np.isin(3, labels_found):
-                category_map[item] = 1
+            if item == "AboutUs":
+                category_map[item] = 1 if np.isin(0, labels_found) else 0
+            elif item == "Amenities":
+                category_map[item] = 1 if np.isin(1, labels_found) else 0
+            elif item == "Location":
+                category_map[item] = 1 if np.isin(3, labels_found) else 0
+                    
+  
             else:
                 item_synonyms = instancesdict.get(item, [item])
                 present = any(any(syn in text for syn in item_synonyms) for text in all_unique)
                 category_map[item] = 1 if present else 0
 
             # Multiply the value by the grade if the value is 1
+            print(category_map[item], "buraaaa")
             if category_map[item] == 1 and item in grades:
                 category_map[item] *= grades[item]
                 total_grades_sum += grades[item]  # Add the grade to the total sum
