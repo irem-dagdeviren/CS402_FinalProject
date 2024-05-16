@@ -2,18 +2,16 @@ from TextProcessor import TextProcessor
 from RDFProcessor import RDFProcessor
 from URLProcessor import URLProcessor
 from ImageProcessor import ImageProcessor
+from GradingProcessor import GradingProcessor
 import numpy as np
 import pandas as pd
 
-def read_grades(file_path):
-    df = pd.read_excel(file_path)
-    grades = dict(zip(df['item'], df['grade']))
-    return grades
 
 def main():
     text_processor = TextProcessor()
     rdf_processor = RDFProcessor("denemequery.rdf")
     url_processor = URLProcessor()
+    grading_processor = GradingProcessor()
     #image_processor = ImageProcessor()
 
     url = 'https://www.flyingpig.nl/beach-hostel/'
@@ -82,9 +80,7 @@ def main():
 
 
     grades_file_path = "grades.xlsx"
-    grades = read_grades(grades_file_path)
-
-    # Other processing steps here...
+    grades = grading_processor.read_grades(grades_file_path)
 
     result_hashmaps = {}
     total_grades_sum = 0  # Initialize a variable to accumulate the sum of grades
