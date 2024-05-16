@@ -5,6 +5,11 @@ from ImageProcessor import ImageProcessor
 import numpy as np
 import pandas as pd
 
+def read_grades(file_path):
+    df = pd.read_excel(file_path)
+    grades = dict(zip(df['item'], df['grade']))
+    return grades
+
 def main():
     text_processor = TextProcessor()
     rdf_processor = RDFProcessor("denemequery.rdf")
@@ -75,25 +80,46 @@ def main():
     print(np.isin(3,labels_found))
     print(np.isin(5,labels_found))
 
+
+    grades_file_path = "grades.xlsx"
+    grades = read_grades(grades_file_path)
+
+    # Other processing steps here...
+
     result_hashmaps = {}
+    total_grades_sum = 0  # Initialize a variable to accumulate the sum of grades
 
     for category, items in leaf_classes.items():
         category_map = {}
         for item in items:
             print(item)
-            if item == "AboutUs" and np.isin(0,labels_found):
+            if item == "AboutUs" and np.isin(0, labels_found):
                 category_map[item] = 1
-            elif item == "Amenities" and np.isin(1,labels_found):
+            elif item == "Amenities" and np.isin(1, labels_found):
                 category_map[item] = 1
-            elif item == "Location" and np.isin(3,labels_found):
+            elif item == "Location" and np.isin(3, labels_found):
                 category_map[item] = 1
             else:
                 item_synonyms = instancesdict.get(item, [item])
                 present = any(any(syn in text for syn in item_synonyms) for text in all_unique)
                 category_map[item] = 1 if present else 0
+
+            # Multiply the value by the grade if the value is 1
+            if category_map[item] == 1 and item in grades:
+                category_map[item] *= grades[item]
+                total_grades_sum += grades[item]  # Add the grade to the total sum
+
         result_hashmaps[category] = category_map
 
     print(result_hashmaps)
+    print(f"Sum of grades: {total_grades_sum}")
+
+    print(f"Label array {labels_found}")
+    print(type(labels_found))
+    print(np.isin(0, labels_found))
+    print(np.isin(1, labels_found))
+    print(np.isin(3, labels_found))
+    print(np.isin(5, labels_found))
 
 
 
