@@ -12,13 +12,16 @@ def main():
     rdf_processor = RDFProcessor("denemequery.rdf")
     url_processor = URLProcessor()
     grading_processor = GradingProcessor()
-    #image_processor = ImageProcessor()
+    image_processor = ImageProcessor()
+    print(image_processor.device)
 
-    url = 'https://www.flyingpig.nl/beach-hostel/'
+    url = 'https://www.divancavehouse.com/tr'
     urls = url_processor.get_all_links(url)
     all_unique = set()
 
     for url in urls:
+        print(image_processor.find_humans(url))
+        print(image_processor.total_numbers())
         url_processor.find_components(url, all_unique)
 
     # for content in all_unique:
@@ -71,13 +74,12 @@ def main():
     mnb = text_processor.multinomial_nb(df, X)
     labels_found = text_processor.predicting_new_labels("unique_contents.csv", cv, mnb)
     print(f"Label array {labels_found}")
-    
-    print(type(labels_found))
-    print(np.isin(0,labels_found))
-    print(np.isin(1,labels_found))
-    print(np.isin(3,labels_found))
-    print(np.isin(5,labels_found))
 
+    print(type(labels_found))
+    print(np.isin(0, labels_found))
+    print(np.isin(1, labels_found))
+    print(np.isin(3, labels_found))
+    print(np.isin(5, labels_found))
 
     grades_file_path = "grades.xlsx"
     grades = grading_processor.read_grades(grades_file_path)
@@ -95,8 +97,8 @@ def main():
                 category_map[item] = 1 if np.isin(1, labels_found) else 0
             elif item == "Location":
                 category_map[item] = 1 if np.isin(3, labels_found) else 0
-                    
-  
+
+
             else:
                 item_synonyms = instancesdict.get(item, [item])
                 present = any(any(syn in text for syn in item_synonyms) for text in all_unique)
@@ -119,7 +121,6 @@ def main():
     print(np.isin(1, labels_found))
     print(np.isin(3, labels_found))
     print(np.isin(5, labels_found))
-
 
 
 if __name__ == "__main__":
