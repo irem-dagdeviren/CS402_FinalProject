@@ -52,12 +52,6 @@
 
 								</select>
 							</li>
-							<li class="select-opt">
-								<select name="currency" id="currency">
-									<option value="usd">USD</option>
-									<option value="euro">Euro</option>
-								</select>
-							</li>
 						</ul>
 					</div>
 				</li>
@@ -100,9 +94,9 @@
 			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 			                    <li class=" scroll active"><a href="#home">home</a></li>
-			                    <li class="scroll"><a href="#works">how it works</a></li>
+			                    <li class="scroll"><a href="#works">scores</a></li>
 			                    <li class="scroll"><a href="#explore">explore</a></li>
-			                    <li class="scroll"><a href="#reviews">review</a></li>
+			                    <li class="scroll"><a href="#reviews">contact</a></li>
 			                </ul><!--/.nav -->
 			            </div><!-- /.navbar-collapse -->
 			        </div><!--/.container-->
@@ -135,18 +129,27 @@
 					</div>
 				</div>
 			</div>
-
 		</section><!--/.welcome-hero-->
+
 		<!--welcome-hero end -->
 		<!--list-topics start -->
 		<section id="list-topics" class="list-topics">
+			<div class="result-section">
+			<div class="assessment-container">
+				<h1>Assessment Score</h1>
+				<div class="score-display">
+					<span class="score" id="score">?</span>
+					<span class="percentage">/100</span>
+				</div>
+			</div>
+		</div>
 			<div class="container">
 				<div class="list-topics-content">
 					<ul>
 						<li>
 							<div class="single-list-topics-content">
 								<div class="single-list-topics-icon">
-									<i class="flaticon-restaurant"></i>
+									<i class="flaticon-wallet"></i>
 								</div>
 								<h2><a href="#">Currency</a></h2>
 								<p id="USD">USD</p>
@@ -159,7 +162,7 @@
 						<li>
 							<div class="single-list-topics-content">
 								<div class="single-list-topics-icon">
-									<i class="flaticon-travel"></i>
+									<i class="flaticon-building"></i>
 								</div>
 								<h2><a href="#">Language</a></h2>
 								<p id="English">English </p>
@@ -186,7 +189,7 @@
 						<li>
 							<div class="single-list-topics-content">
 								<div class="single-list-topics-icon">
-									<i class="flaticon-pills"></i>
+									<i class="flaticon-building"></i>
 								</div>
 								<h2><a href="#">Hotel Policies</a></h2>
 								<p id="CancellationPolicy">Cancellation Policy</p>
@@ -199,7 +202,7 @@
 						<li>
 							<div class="single-list-topics-content">
 								<div class="single-list-topics-icon">
-									<i class="flaticon-pills"></i>
+									<i class="flaticon-desktop"></i>
 								</div>
 								<h2><a href="#">Social Media</a></h2>
 								<p id="Instagram">Instagram</p>
@@ -210,7 +213,7 @@
 						<li>
 							<div class="single-list-topics-content">
 								<div class="single-list-topics-icon">
-									<i class="flaticon-transport"></i>
+									<i class="flaticon-location-on-road"></i>
 								</div>
 								<h2><a href="#">Maps</a></h2>
 								<p id="GoogleMaps">Google Maps</p>
@@ -835,6 +838,11 @@
                             document.getElementById('Chatbot').innerText = 'Chatbot: ' + (userExperienceMap.Chatbot !== undefined ? userExperienceMap.Chatbot : 'N/A');
                             document.getElementById('WeatherForecast').innerText = 'Weather Forecast: ' + (userExperienceMap.Weather !== undefined ? userExperienceMap.Weather : 'N/A');
                         }
+						if(data.total_grades_sum){
+							const result = data.total_grades_sum;
+                            document.getElementById('score').innerText = (result !== undefined ? result : 'N/A');
+                        
+						}
 						
 					}
                 } catch (error) {

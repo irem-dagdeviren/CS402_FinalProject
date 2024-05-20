@@ -49,6 +49,10 @@ body{
 	overflow-x:hidden;
 }
 
+
+
+
+
 a,a:hover,a:active,a:focus {
 	display:inline-block;
 	text-decoration:none;
@@ -332,9 +336,54 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 /*-------------------------------------
         5. List-topuics
 --------------------------------------*/
+.result-section {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    flex-direction: column; /* Flex yönünü dikey yapar */
+}
+.assessment-container {
+    display:inline-block;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin-bottom:40px;
+
+}
+
+.assessment-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.score-display {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 60px;
+    color: #4caf50;
+}
+
+.score {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.percentage {
+    font-size: 40px;
+    margin-left: 5px;
+}
 .list-topics-content {
-    position: relative;
-    top: -98px;
+    /* position: relative;
+    top: -98px; */
     z-index: 1;
     display: flex;
     flex-wrap: wrap;
