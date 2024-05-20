@@ -296,15 +296,14 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 }
 .single-welcome-hero-form input {
     margin-left: 10px;
-    height: 70px;
-    width: 700px;
+    height: 100%;
+    width: 300%;
     border: 0;
     background: transparent;
 }
 .single-welcome-hero-form input[type="text"]{
     font-size: 14px;
     color: #859098;
-    text-transform: capitalize;
     font-weight: 500;
 }
 .welcome-hero-btn {
