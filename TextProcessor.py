@@ -63,8 +63,8 @@ class TextProcessor:
         print("Naive Bayes accuracy is ", round(accuracy_score(y_test, y_pred), 2) * 100, "%")
         print("\n")
         print("Confusion matrix for Naive Bayes ")
-        disp = ConfusionMatrixDisplay(confusion_matrix=cm)
-        disp.plot()
+        # disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+        # disp.plot()
         return mnb
 
     def predicting_new_labels(self, new_file_path, cv, mnb):

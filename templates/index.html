@@ -1,0 +1,848 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <!-- meta data -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        
+        <!-- title of site -->
+        <title>Directory Landing Page</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootsnav.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/slick-theme.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/linearicons.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+		<link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename='logo/favicon.png') }}">
+	</head>
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		
+        <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+	
+	<body>
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+		
+		<!--header-top start -->
+		<header id="header-top" class="header-top">
+			<ul>
+				<li>
+					<div class="header-top-left">
+						<ul>
+							<li class="select-opt">
+								<select name="language" id="language">
+									<option value="default">EN</option>
+									<option value="Türkçe">TR</option>
+
+								</select>
+							</li>
+							<li class="select-opt">
+								<select name="currency" id="currency">
+									<option value="usd">USD</option>
+									<option value="euro">Euro</option>
+								</select>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="head-responsive-right pull-right">
+					<div class="header-top-right">
+						<ul>
+							<li class="header-top-contact">
+								<a href="#">sign in</a>
+							</li>
+							<li class="header-top-contact">
+								<a href="#">register</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+					
+		</header><!--/.header-top-->
+		<!--header-top end -->
+
+		<!-- top-area Start -->
+		<section class="top-area">
+			<div class="header-area">
+				<!-- Start Navigation -->
+			    <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+
+			        <div class="container">
+
+			            <!-- Start Header Navigation -->
+			            <div class="navbar-header">
+			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+			                    <i class="fa fa-bars"></i>
+			                </button>
+			                <a class="navbar-brand" href="#">Hotel Website <span>Assestment Tool</span></a>
+
+			            </div><!--/.navbar-header-->
+			            <!-- End Header Navigation -->
+
+			            <!-- Collect the nav links, forms, and other content for toggling -->
+			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+			                    <li class=" scroll active"><a href="#home">home</a></li>
+			                    <li class="scroll"><a href="#works">how it works</a></li>
+			                    <li class="scroll"><a href="#explore">explore</a></li>
+			                    <li class="scroll"><a href="#reviews">review</a></li>
+			                </ul><!--/.nav -->
+			            </div><!-- /.navbar-collapse -->
+			        </div><!--/.container-->
+			    </nav><!--/nav-->
+			    <!-- End Navigation -->
+			</div><!--/.header-area-->
+		    <div class="clearfix"></div>
+
+		</section><!-- /.top-area-->
+		<!-- top-area End -->	
+		<!--welcome-hero start -->
+		<section id="home" class="welcome-hero">
+			<div class="container">
+				<div class="welcome-hero-txt">
+					<h2>best place to find and explore <br> that all you need </h2>
+					<p>
+						Find Best Place, Restaurant, Hotel, Real Estate, and many more things in just one click.
+					</p>
+				</div>
+				<div class="welcome-hero-serch-box">
+					<div class="welcome-hero-form">
+						<div class="single-welcome-hero-form">
+							<form onsubmit="return false;">
+								<input type="text" id="url-input" placeholder="Enter URL" />
+							</form>
+						</div>
+					</div>
+					<div class="welcome-hero-serch">
+						<button class="welcome-hero-btn" id="search-button">search  <i data-feather="search"></i></button>
+					</div>
+				</div>
+			</div>
+
+		</section><!--/.welcome-hero-->
+		<!--welcome-hero end -->
+		<!--list-topics start -->
+		<section id="list-topics" class="list-topics">
+			<div class="container">
+				<div class="list-topics-content">
+					<ul>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-restaurant"></i>
+								</div>
+								<h2><a href="#">Currency</a></h2>
+								<p id="USD">USD</p>
+								<p id="CAD">CAD</p>
+								<p id="EUR">EUR</p>
+								<p id="GBP">GBP</p>
+								<p id="TL">TL</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-travel"></i>
+								</div>
+								<h2><a href="#">Language</a></h2>
+								<p id="English">English </p>
+								<p id="Türkçe">Türkçe </p>
+								<p id="Deutsch">Deutsch </p>
+								<p id="Русский">Русский </p>
+								<p id="Español">Español </p>
+								<p id="عربي">عربي </p>
+								<p id="Italiano">Italiano </p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-building"></i>
+								</div>
+								<h2><a href="#">Reservation</a></h2>
+								<p id="Adult">Adult</p>
+								<p id="Arrival">Arrival</p>
+								<p id="Departure">Departure</p>
+								<p id="BookButton">Book Button</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-pills"></i>
+								</div>
+								<h2><a href="#">Hotel Policies</a></h2>
+								<p id="CancellationPolicy">Cancellation Policy</p>
+								<p id="CookiePolicy">Cookie Policy</p>
+								<p id="HotelPolicy">Hotel Policies</p>
+								<p id="PrivacyPolicy">Privacy Policy</p>
+							
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-pills"></i>
+								</div>
+								<h2><a href="#">Social Media</a></h2>
+								<p id="Instagram">Instagram</p>
+								<p id="Facebook">Facebook</p>
+								<p id="Twitter">Twitter</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">Maps</a></h2>
+								<p id="GoogleMaps">Google Maps</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">Review</a></h2>
+								<p id="Testimonials">Testimonials</p>
+								<p id="TripAdvisor">Trip Advisor</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">Forms</a></h2>
+								<p id="QuestionForms">Question Forms</p>
+								<p id="Surveys">Surveys</p>							
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">Contact Information</a></h2>
+									<p id="Phone">Phone</p>
+									<p id="Mail">Mail</p>
+									<p id="WhatsApp">WhatsApp</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-location-on-road"></i>
+								</div>
+								<h2><a href="#">About Hotel</a></h2>
+									<p id="Location">Location </p>
+									<p id="AboutUs">About Us Section </p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">Website Certificate</a></h2>
+    								<p id="WebsiteSecurity">Website Security </p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">Room Information</a></h2>
+									<p id="Video">Video </p>
+									<p id="Description">Description </p>
+									<p id="Amenities">Amenities / Facilities </p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">Gallery</a></h2>
+   								<p id="PhotoGallery">Photo Gallery </p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">Subscriptions</a></h2>
+								<p id="JournalSubscriptions">Journal Subscriptions </p>
+								<p id="NewsletterSubscriptions">Newsletter Subscriptions </p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">Special Offers</a></h2>
+								<p id="SpecialOfferSection">Special Offer Section </p>							
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">Friendly User Interface</a></h2>
+								<p id="Photos">Photos </p>
+								<p id="Searchbar">Searchbar </p>
+								<p id="Sliders">Sliders </p>
+								<p id="DatePickers">Date Pickers </p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content">
+								<div class="single-list-topics-icon">
+									<i class="flaticon-transport"></i>
+								</div>
+								<h2><a href="#">User Experience</a></h2>
+								<p id="VirtualTour">Virtual Tour </p>
+								<p id="Chatbot">Chatbot </p>
+								<p id="WeatherForecast">Weather Forecast </p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div><!--/.container-->
+
+		</section><!--/.list-topics-->
+		<!--list-topics end-->
+
+		<!--works start -->
+		<section id="works" class="works">
+			<div class="container">
+				<div class="section-header">
+					<h2>how it works</h2>
+					<p>Learn More about how our website works</p>
+				</div><!--/.section-header-->
+				<div class="works-content">
+					<div class="row">
+						<div class="col-md-4 col-sm-6">
+							<div class="single-how-works">
+								<div class="single-how-works-icon">
+									<i class="flaticon-lightbulb-idea"></i>
+								</div>
+								<h2><a href="#">choose <span> what to</span> do</a></h2>
+								<p>
+									Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt ut laboremagna aliqua. 
+								</p>
+								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
+									read more
+								</button>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="single-how-works">
+								<div class="single-how-works-icon">
+									<i class="flaticon-networking"></i>
+								</div>
+								<h2><a href="#">find <span> what you want</span></a></h2>
+								<p>
+									Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt ut laboremagna aliqua. 
+								</p>
+								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
+									read more
+								</button>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="single-how-works">
+								<div class="single-how-works-icon">
+									<i class="flaticon-location-on-road"></i>
+								</div>
+								<h2><a href="#">explore <span> amazing</span> place</a></h2>
+								<p>
+									Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt ut laboremagna aliqua. 
+								</p>
+								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
+									read more
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!--/.container-->
+		
+		</section><!--/.works-->
+		<!--works end -->
+
+
+		<!--reviews start -->
+		<section id="reviews" class="reviews">
+			<div class="section-header">
+				<h2>clients reviews</h2>
+				<p>What our client say about us</p>
+			</div><!--/.section-header-->
+			<div class="reviews-content">
+				<div class="testimonial-carousel">
+				    <div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="{{ url_for('static', filename='images/clients/c1.png') }}" alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2>Tom Leakar</h2>
+									<h4>london, UK</h4>
+									<div class="testimonial-person-star">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+				    <div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="{{ url_for('static', filename='images/clients/c2.png') }}" alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2>monirul islam</h2>
+									<h4>london, UK</h4>
+									<div class="testimonial-person-star">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+				    <div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="{{ url_for('static', filename='images/clients/c3.png') }}" alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2>Shohrab Hossain</h2>
+									<h4>london, UK</h4>
+									<div class="testimonial-person-star">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+				    <div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="{{ url_for('static', filename='images/clients/c4.png') }}" alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2>Tom Leakar</h2>
+									<h4>london, UK</h4>
+									<div class="testimonial-person-star">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+				    <div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="{{ url_for('static', filename='images/clients/c1.png') }}" alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2>Tom Leakar</h2>
+									<h4>london, UK</h4>
+									<div class="testimonial-person-star">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+				    <div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="{{ url_for('static', filename='images/clients/c2.png') }}" alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2>monirul islam</h2>
+									<h4>london, UK</h4>
+									<div class="testimonial-person-star">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+				    <div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="{{ url_for('static', filename='images/clients/c3.png') }}"alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2>Shohrab Hossain</h2>
+									<h4>london, UK</h4>
+									<div class="testimonial-person-star">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+				    <div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="{{ url_for('static', filename='images/clients/c4.png') }}" alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2>Tom Leakar</h2>
+									<h4>london, UK</h4>
+									<div class="testimonial-person-star">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+				</div>
+			</div>
+
+		</section><!--/.reviews-->
+		<!--reviews end -->
+
+		<!--footer start-->
+		<footer id="footer"  class="footer">
+			<div class="container">
+				<div class="footer-menu">
+		           	<div class="row">
+			           	<div class="col-sm-3">
+			           		 <div class="navbar-header">
+				                <a class="navbar-brand" href="#">Hotel Website<span>Assestment Tool</span></a>
+				            </div><!--/.navbar-header-->
+			           	</div>
+			           	<div class="col-sm-9">
+			           		<ul class="footer-menu-item">
+			                    <li class="scroll"><a href="#works">how it works</a></li>
+			                    <li class="scroll"><a href="#explore">explore</a></li>
+			                    <li class="scroll"><a href="#reviews">review</a></li>
+			                    <li class="scroll"><a href="#contact">contact</a></li>
+			                </ul><!--/.nav -->
+			           	</div>
+		           </div>
+				</div>
+				<div class="hm-footer-copyright">
+					<div class="row">
+						<div class="col-sm-5">
+							<p>
+								&copy;copyright. designed and developed by <a href="https://www.themesine.com/">themesine</a>
+							</p><!--/p-->
+						</div>
+						<div class="col-sm-7">
+							<div class="footer-social">
+								<span><i class="fa fa-phone"> +1  (222) 777 8888</i></span>
+								<a href="#"><i class="fa fa-facebook"></i></a>	
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="#"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					
+				</div><!--/.hm-footer-copyright-->
+			</div><!--/.container-->
+
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-->
+		<!--footer end-->
+		
+<!-- jQuery -->
+<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+
+<!-- Modernizr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+<!-- jQuery Easing -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+<!-- Bootsnav -->
+<script src="{{ url_for('static', filename='js/bootsnav.js') }}"></script>
+
+<!-- Slick -->
+<script src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
+
+<!-- Feather Icons -->
+<script src="{{ url_for('static', filename='js/feather.min.js') }}"></script>
+
+<!-- Waypoints -->
+<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+
+<!-- CounterUp -->
+<script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+
+<!-- Custom JS -->
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+        
+    </body>
+	
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const urlInput = document.getElementById('url-input');
+
+            const handleClick = async () => {
+                const url = urlInput.value;
+                try {
+                    const response = await axios.get(`http://127.0.0.1:5000/run-python-code?url=${encodeURIComponent(url)}`);
+					const data = response.data
+					
+					if (data.result_hashmaps ){
+						if (data.result_hashmaps.Currency) {
+                            const currencyMap = data.result_hashmaps.Currency;
+                            document.getElementById('USD').innerText = 'USD: ' + (currencyMap.USD !== undefined ? currencyMap.USD : 'N/A');
+                            document.getElementById('CAD').innerText = 'CAD: ' + (currencyMap.CAD !== undefined ? currencyMap.CAD : 'N/A');
+                            document.getElementById('EUR').innerText = 'EUR: ' + (currencyMap.EUR !== undefined ? currencyMap.EUR : 'N/A');
+                            document.getElementById('GBP').innerText = 'GBP: ' + (currencyMap.GBP !== undefined ? currencyMap.GBP : 'N/A');
+                            document.getElementById('TL').innerText = 'TL: ' + (currencyMap.TL !== undefined ? currencyMap.TL : 'N/A');
+                        }
+                        
+                        // Update Languages
+                        if (data.result_hashmaps.Language) {
+                            const languageMap = data.result_hashmaps.Language;
+                            document.getElementById('English').innerText = 'English: ' + (languageMap.English !== undefined ? languageMap.English : 'N/A');
+                            document.getElementById('Türkçe').innerText = 'Türkçe: ' + (languageMap.Türkçe !== undefined ? languageMap.Türkçe : 'N/A');
+                            document.getElementById('Deutsch').innerText = 'Deutsch: ' + (languageMap.Deutsch !== undefined ? languageMap.Deutsch : 'N/A');
+                            document.getElementById('Русский').innerText = 'Русский: ' + (languageMap.Русский !== undefined ? languageMap.Русский : 'N/A');
+                            document.getElementById('Español').innerText = 'Español: ' + (languageMap.Español !== undefined ? languageMap.Español : 'N/A');
+                            document.getElementById('عربي').innerText = 'عربي: ' + (languageMap.عربي !== undefined ? languageMap.عربي : 'N/A');
+                            document.getElementById('Italiano').innerText = 'Italiano: ' + (languageMap.Italiano !== undefined ? languageMap.Italiano : 'N/A');
+                        }
+
+                        // Update Reservation
+                        if (data.result_hashmaps.Reservation) {
+                            const reservationMap = data.result_hashmaps.Reservation;
+                            document.getElementById('Adult').innerText = 'Adult: ' + (reservationMap.Adult !== undefined ? reservationMap.Adult : 'N/A');
+                            document.getElementById('Arrival').innerText = 'Arrival: ' + (reservationMap.Arrival !== undefined ? reservationMap.Arrival : 'N/A');
+                            document.getElementById('Departure').innerText = 'Departure: ' + (reservationMap.Departure !== undefined ? reservationMap.Departure : 'N/A');
+                            document.getElementById('BookButton').innerText = 'Book Button: ' + (reservationMap.BookButton !== undefined ? reservationMap.BookButton : 'N/A');
+                        }
+
+                        // Update Hotel Policies
+                        if (data.result_hashmaps.HotelPolicies) {
+                            const hotelPoliciesMap = data.result_hashmaps.HotelPolicies;
+                            document.getElementById('CancellationPolicy').innerText = 'Cancellation Policy: ' + (hotelPoliciesMap.CancellationPolicy !== undefined ? hotelPoliciesMap.CancellationPolicy : 'N/A');
+                            document.getElementById('CookiePolicy').innerText = 'Cookie Policy: ' + (hotelPoliciesMap.CookiePolicy !== undefined ? hotelPoliciesMap.CookiePolicy : 'N/A');
+                            document.getElementById('HotelPolicy').innerText = 'Hotel Policies: ' + (hotelPoliciesMap.HotelPolicy !== undefined ? hotelPoliciesMap.HotelPolicy : 'N/A');
+                            document.getElementById('PrivacyPolicy').innerText = 'Privacy Policy: ' + (hotelPoliciesMap.PrivacyPolicy !== undefined ? hotelPoliciesMap.PrivacyPolicy : 'N/A');
+                        }
+
+                        // Update Social Media
+                        if (data.result_hashmaps.SocialMedia) {
+                            const socialMediaMap = data.result_hashmaps.SocialMedia;
+                            document.getElementById('Instagram').innerText = 'Instagram: ' + (socialMediaMap.Instagram !== undefined ? socialMediaMap.Instagram : 'N/A');
+                            document.getElementById('Facebook').innerText = 'Facebook: ' + (socialMediaMap.Facebook !== undefined ? socialMediaMap.Facebook : 'N/A');
+                            document.getElementById('Twitter').innerText = 'Twitter: ' + (socialMediaMap.Twitter !== undefined ? socialMediaMap.Twitter : 'N/A');
+                        }
+
+                        // Update Maps
+                        if (data.result_hashmaps.Map) {
+                            const mapMap = data.result_hashmaps.Map;
+                            document.getElementById('GoogleMaps').innerText = 'Google Maps: ' + (mapMap.Map !== undefined ? mapMap.GoogleMaps : 'N/A');
+                        }
+
+                        // Update Review
+                        if (data.result_hashmaps.Review) {
+                            const reviewMap = data.result_hashmaps.Review;
+                            document.getElementById('Testimonials').innerText = 'Testimonials: ' + (reviewMap.Testimonials !== undefined ? reviewMap.Testimonials : 'N/A');
+                            document.getElementById('TripAdvisor').innerText = 'Trip Advisor: ' + (reviewMap.TripAdvisor !== undefined ? reviewMap.TripAdvisor : 'N/A');
+                        }
+
+                        // Update Forms
+                        if (data.result_hashmaps.Form) {
+                            const formMap = data.result_hashmaps.Form;
+                            document.getElementById('QuestionForms').innerText = 'Question Forms: ' + (formMap.QuestionForm !== undefined ? formMap.QuestionForm : 'N/A');
+                            document.getElementById('Surveys').innerText = 'Surveys: ' + (formMap.FeedbackSurvey !== undefined ? formMap.FeedbackSurvey : 'N/A');
+                        }
+
+                        // Update Contact Information
+                        if (data.result_hashmaps.Contact) {
+                            const contactMap = data.result_hashmaps.Contact;
+                            document.getElementById('Phone').innerText = 'Phone: ' + (contactMap.Phone !== undefined ? contactMap.Phone : 'N/A');
+                            document.getElementById('Mail').innerText = 'Mail: ' + (contactMap.Mail !== undefined ? contactMap.Mail : 'N/A');
+                            document.getElementById('WhatsApp').innerText = 'WhatsApp: ' + (contactMap.Whatsapp !== undefined ? contactMap.Whatsapp : 'N/A');
+                        }
+
+                        // Update About Hotel
+                        if (data.result_hashmaps.About) {
+                            const aboutMap = data.result_hashmaps.About;
+                            document.getElementById('Location').innerText = 'Location: ' + (aboutMap.Location !== undefined ? aboutMap.Location : 'N/A');
+                            document.getElementById('AboutUs').innerText = 'About Us Section: ' + (aboutMap.AboutUs !== undefined ? aboutMap.AboutUs : 'N/A');
+                        }
+
+                        // Update Website Certificate
+                        if (data.result_hashmaps.Security) {
+                            const securityMap = data.result_hashmaps.Security;
+                            document.getElementById('WebsiteSecurity').innerText = 'Website Security: ' + (securityMap.WebsiteSecurity !== undefined ? securityMap.WebsiteSecurity : 'N/A');
+                        }
+
+                        // Update Room Information
+                        if (data.result_hashmaps.Room) {
+                            const roomMap = data.result_hashmaps.Room;
+                            document.getElementById('Video').innerText = 'Video: ' + (roomMap.Video !== undefined ? roomMap.Video : 'N/A');
+                            document.getElementById('Description').innerText = 'Description: ' + (roomMap.Description !== undefined ? roomMap.Description : 'N/A');
+                            document.getElementById('Amenities').innerText = 'Amenities / Facilities: ' + (roomMap.Amenities !== undefined ? roomMap.Amenities : 'N/A');
+                        }
+
+                        // Update Gallery
+                        if (data.result_hashmaps.Gallery) {
+                            const galleryMap = data.result_hashmaps.Gallery;
+                            document.getElementById('PhotoGallery').innerText = 'Photo Gallery: ' + (galleryMap.PhotoGallery !== undefined ? galleryMap.PhotoGallery : 'N/A');
+                        }
+
+                        // Update Subscriptions
+                        if (data.result_hashmaps.Subscriptions) {
+                            const subscriptionsMap = data.result_hashmaps.Subscriptions;
+                            document.getElementById('JournalSubscriptions').innerText = 'Journal Subscriptions: ' + (subscriptionsMap.JournalSubscriptions !== undefined ? subscriptionsMap.JournalSubscriptions : 'N/A');
+                            document.getElementById('NewsletterSubscriptions').innerText = 'Newsletter Subscriptions: ' + (subscriptionsMap.NewsletterSubscriptions !== undefined ? subscriptionsMap.NewsletterSubscriptions : 'N/A');
+                        }
+
+                        // Update Special Offers
+                        if (data.result_hashmaps.SpecialOffer) {
+                            const specialOfferMap = data.result_hashmaps.SpecialOffer;
+                            document.getElementById('SpecialOfferSection').innerText = 'Special Offer Section: ' + (specialOfferMap.SpecialOfferSection !== undefined ? specialOfferMap.SpecialOfferSection : 'N/A');
+                        }
+
+                        // Update Friendly User Interface
+                        if (data.result_hashmaps.UserInterface) {
+                            const userInterfaceMap = data.result_hashmaps.UserInterface;
+                            document.getElementById('Photos').innerText = 'Photos: ' + (userInterfaceMap.Photo !== undefined ? userInterfaceMap.Photo : 'N/A');
+                            document.getElementById('Searchbar').innerText = 'Searchbar: ' + (userInterfaceMap.Searchbar !== undefined ? userInterfaceMap.Searchbar : 'N/A');
+                            document.getElementById('Sliders').innerText = 'Sliders: ' + (userInterfaceMap.Slider !== undefined ? userInterfaceMap.Slider : 'N/A');
+                            document.getElementById('DatePickers').innerText = 'Date Pickers: ' + (userInterfaceMap.Calendar !== undefined ? userInterfaceMap.Calendar : 'N/A');
+                        }
+
+                        // Update User Experience
+                        if (data.result_hashmaps.UserExperience) {
+                            const userExperienceMap = data.result_hashmaps.UserExperience;
+                            document.getElementById('VirtualTour').innerText = 'Virtual Tour: ' + (userExperienceMap.VirtualTour !== undefined ? userExperienceMap.VirtualTour : 'N/A');
+                            document.getElementById('Chatbot').innerText = 'Chatbot: ' + (userExperienceMap.Chatbot !== undefined ? userExperienceMap.Chatbot : 'N/A');
+                            document.getElementById('WeatherForecast').innerText = 'Weather Forecast: ' + (userExperienceMap.Weather !== undefined ? userExperienceMap.Weather : 'N/A');
+                        }
+						
+					}
+                } catch (error) {
+                    console.error('Error executing Python code:', error);
+                }
+            };
+
+            document.getElementById('search-button').addEventListener('click', handleClick);
+        });
+    </script>
+</html>
