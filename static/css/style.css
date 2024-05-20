@@ -338,7 +338,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 --------------------------------------*/
 .result-section {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
