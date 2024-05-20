@@ -15,10 +15,7 @@ class ContentAnalyzer:
         self.rdf_processor = RDFProcessor(rdf_file)
         self.url_processor = URLProcessor()
         self.grading_processor = GradingProcessor()
-        self.image_processor = ImageProcessor()
-
-        print(self.image_processor.device)
-
+        #self.image_processor = ImageProcessor()
         self.all_unique = set()
         self.leaf_classes = {}
         self.instancesdict = {}
@@ -28,9 +25,9 @@ class ContentAnalyzer:
     def process_urls(self):
         urls = self.url_processor.get_all_links(self.input_url)
         for url in urls:
-            print(self.image_processor.find_humans(url))
+            # print(self.image_processor.find_humans(url))
+            # print(self.image_processor.total_numbers())
             self.url_processor.find_components(url, self.all_unique)
-
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
         df.to_csv('unique_contents.csv', index=False)
         return len(urls), len(self.all_unique)
@@ -100,7 +97,7 @@ class ContentAnalyzer:
 
         return {
             "urls_processed": urls_processed,
-            "total_scanned,_images": self.image_processor.total_numbers(),
+            #"total_scanned,_images": self.image_processor.total_numbers(),
             "unique_contents_count": unique_contents_count,
             "result_hashmaps": self.result_hashmaps,
             "total_grades_sum": self.total_grades_sum
