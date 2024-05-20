@@ -1,28 +1,4 @@
-import requests
-from bs4 import BeautifulSoup
-from urllib.parse import urljoin, urlparse, urlunparse
-import pandas as pd
-import numpy as np
 import rdflib
-from rdflib import Graph, RDFS, URIRef
-from sklearn.metrics import ConfusionMatrixDisplay
-import sys
-import nltk
-import ssl
-import seaborn as sns
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from sklearn.metrics import confusion_matrix, accuracy_score
-from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
-import re
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import MultinomialNB
-from PIL import Image
-import torch
-import torchvision.transforms as transforms
-import torchvision.models as models
-from io import BytesIO
 
 
 class RDFProcessor:

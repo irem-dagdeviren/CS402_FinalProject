@@ -1,12 +1,10 @@
 from flask import Flask, render_template, request, jsonify
-import requests
 from ContentAnalyzer import ContentAnalyzer
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    my_data = "Hello from Python"
     return render_template('index.html',  deneme="deneme")
 
 @app.route('/run-python-code', methods=['GET'])
