@@ -50,11 +50,11 @@ class TextProcessor:
         # disp.plot()
         return mnb
 
-    def predicting_new_labels(self, new_file_path, cv, mnb):
-        new_excel = pd.read_csv(new_file_path)
-        new_excel.dropna(inplace=True)
-        new = cv.transform(new_excel["Unique Content"]).toarray()
+    def predicting_new_labels(self, df, cv, mnb):
+        # new_excel = pd.read_csv(new_file_path)
+        # new_excel.dropna(inplace=True)
+        df.dropna(inplace=True)
+        new = cv.transform(df["Unique Content"]).toarray()
         new_labels = mnb.predict(new)
-        new_prob = mnb.predict_proba(new)
         return new_labels
     

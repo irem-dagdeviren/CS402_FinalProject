@@ -1021,7 +1021,7 @@
     <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#AmenitiesFacilites -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#AmenitiesFacilites">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Room"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/About"/>
     </owl:Class>
     
 
@@ -1110,6 +1110,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Español">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#ExperientialPhotos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#ExperientialPhotos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Gallery"/>
     </owl:Class>
     
 
@@ -1262,6 +1270,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Photo">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#UserInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Photos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Photos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Gallery"/>
     </owl:Class>
     
 
@@ -1439,14 +1455,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Whatsapp">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Contact"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#gallery -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#gallery">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Gallery"/>
     </owl:Class>
     
 
@@ -2147,7 +2155,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#gallery">
         <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Gallery"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#gallery"/>
     </owl:NamedIndividual>
     
 
@@ -2499,9 +2506,7 @@
 
     <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#photo-gallery -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#photo-gallery">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#gallery"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#photo-gallery"/>
     
 
 

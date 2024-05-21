@@ -235,6 +235,7 @@
 								<h2><a href="#">About Hotel</a></h2>
 									<p id="Location">Location </p>
 									<p id="AboutUs">About Us Section </p>
+									<p id="Amenities">Amenities / Facilities </p>
 							</div>
 						</li>
 						<li>
@@ -254,7 +255,7 @@
 								<h2><a href="#">Room Information</a></h2>
 									<p id="Capacity">Capacity </p>
 									<p id="Price">Price </p>
-									<p id="Amenities">Amenities / Facilities </p>
+
 							</div>
 						</li>
 						<li>
@@ -263,7 +264,8 @@
 									<i class="flaticon-transport"></i>
 								</div>
 								<h2><a href="#">Gallery</a></h2>
-   								<p id="PhotoGallery">Photo Gallery </p>
+   								<p id="ExperientialPhotos"> Experiential Photo</p>
+								<p id="PhotoGallery">Photo Gallery </p>
 							</div>
 						</li>
 						<li>
@@ -647,6 +649,8 @@
 
                             document.getElementById('Location').innerText = 'Location: ' + (aboutMap.Location !== undefined ? aboutMap.Location : 'N/A');
                             document.getElementById('AboutUs').innerText = 'About Us Section: ' + (aboutMap.AboutUs !== undefined ? aboutMap.AboutUs : 'N/A');
+                            console.log(aboutMap.AmenitiesFacilities)
+                            document.getElementById('Amenities').innerText = 'Amenities / Facilities: ' + (aboutMap.AmenitiesFacilities !== undefined ? aboutMap.AmenitiesFacilities : 'N/A');
                         }
 
                         // Update Website Certificate
@@ -664,7 +668,7 @@
 
                             document.getElementById('Capacity').innerText = 'Video: ' + (roomMap.Capacity !== undefined ? roomMap.Capacity : 'N/A');
                             document.getElementById('Price').innerText = 'Description: ' + (roomMap.Price !== undefined ? roomMap.Price : 'N/A');
-                            document.getElementById('Amenities').innerText = 'Amenities / Facilities: ' + (roomMap.AmenitiesFacilities !== undefined ? roomMap.AmenitiesFacilities : 'N/A');
+
                         }
 
                         // Update Gallery
@@ -673,7 +677,8 @@
 							console.log(galleryMap.gallery)
 							console.log(galleryMap)
 
-                            document.getElementById('PhotoGallery').innerText = 'Photo Gallery: ' + (galleryMap.gallery !== undefined ? galleryMap.gallery : 'N/A');
+                            document.getElementById('ExperientialPhotos').innerText = 'Experiential Photo: ' + (galleryMap.ExperientialPhotos !== undefined ? galleryMap.ExperientialPhotos : 'N/A');
+                            document.getElementById('PhotoGallery').innerText = 'Photo Gallery: ' + (galleryMap.Photos !== undefined ? galleryMap.Photos : 'N/A');
                         }
 
                         // Update Subscriptions

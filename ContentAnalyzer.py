@@ -31,8 +31,8 @@ class ContentAnalyzer:
             # print(self.image_processor.total_numbers())
             self.url_processor.find_components(url, self.all_unique)
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
-        df.to_csv('unique_contents.csv', index=False)
-        return len(urls), len(self.all_unique)
+        # df.to_csv('unique_contents.csv', index=False)
+        return len(urls), len(self.all_unique), df
 
     def process_rdf(self):
         if not self.rdf_processor.graph:
@@ -58,12 +58,12 @@ class ContentAnalyzer:
                         self.instancesdict[level2name] = instanceslist
                 self.leaf_classes[level1name] = subclassesoflevel1
 
-    def process_texts(self, file_path="all-texts2.xlsx"):
+    def process_texts(self, df_unique,  file_path="all-texts2.xlsx"):
         df = self.text_processor.read_data(file_path)
         corpus = self.text_processor.porter(df)
         X, cv = self.text_processor.count_vectorizer(corpus)
         mnb = self.text_processor.multinomial_nb(df, X)
-        labels_found = self.text_processor.predicting_new_labels("unique_contents.csv", cv, mnb)
+        labels_found = self.text_processor.predicting_new_labels(df_unique, cv, mnb)
         return labels_found
 
     def process_grades(self, labels_found):
@@ -75,7 +75,7 @@ class ContentAnalyzer:
                 for item in items:
                     if item == "AboutUs":
                         category_map[item] = 1 if np.isin(0, labels_found) else 0
-                    elif item == "Amenities-Facilities":
+                    elif item == "AmenitiesFacilities":
                         category_map[item] = 1 if np.isin(1, labels_found) else 0
                     elif item == "Location":
                         category_map[item] = 1 if np.isin(3, labels_found) else 0
@@ -100,9 +100,9 @@ class ContentAnalyzer:
   
 
     def run(self):
-        urls_processed, unique_contents_count = self.process_urls()
+        urls_processed, unique_contents_count, component_df = self.process_urls()
         self.process_rdf()
-        labels_found = self.process_texts()
+        labels_found = self.process_texts(component_df)
         self.process_grades(labels_found)
         print(self.result_hashmaps)
 
