@@ -81,7 +81,7 @@ class ContentAnalyzer:
                         category_map[item] = 1 if np.isin(3, labels_found) else 0
                     else:
                         item_synonyms = self.instancesdict.get(item, [item])
-                        present = any(any(syn in text for syn in item_synonyms) for text in self.all_unique)
+                        present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
                         category_map[item] = 1 if present else 0
                     
                     if category_map[item] == 1 and item in grades:
@@ -114,7 +114,7 @@ class ContentAnalyzer:
             "result_hashmaps": self.result_hashmaps,
             "total_grades_sum": round(self.total_grades_sum,2)
         }
-
+        print(self.all_unique)
         self.store_results_in_firebase(results)
         print( "geldi mi?")
         return results

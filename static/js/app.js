@@ -36,8 +36,13 @@ async function fetchData() {
             row.appendChild(cellNo);
 
             const cellName = document.createElement('td');
-            cellName.textContent = value.url;
+            const link = document.createElement('a');
+            link.href = value.url;
+            link.target = "_blank"; // Open in a new tab
+            link.textContent = value.url;
+            cellName.appendChild(link);
             row.appendChild(cellName);
+
 
             const cellScore = document.createElement('td');
             cellScore.textContent = value.total_grades_sum || "N/A"; // Adjust based on your data structure
