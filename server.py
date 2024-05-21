@@ -1,7 +1,11 @@
 from flask import Flask, render_template, request, jsonify
 from ContentAnalyzer import ContentAnalyzer
+from firebase_setup import init_firebase
+
 
 app = Flask(__name__)
+
+init_firebase()
 
 @app.route('/')
 def home():

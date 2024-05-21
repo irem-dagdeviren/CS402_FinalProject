@@ -1,27 +1,32 @@
-// Firebase configuration
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
+
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    databaseURL: "YOUR_DATABASE_URL",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyBTrpCbKI_xdf6qL4JMe0PzcspWegfZLLk",
+    authDomain: "cs402-1c97e.firebaseapp.com",
+    databaseURL: "https://cs402-1c97e-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "cs402-1c97e",
+    storageBucket: "cs402-1c97e.appspot.com",
+    messagingSenderId: "129609008324",
+    appId: "1:129609008324:web:b53a99cf86132730c13591",
+    measurementId: "G-FB167SZPLZ"
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-// Function to fetch data from Firebase and display in the table
-function fetchData() {
+async function fetchData() {
     const dataTableBody = document.getElementById('data-table-body');
     dataTableBody.innerHTML = ''; // Clear the table body
 
-    database.ref('your_data_path').once('value', (snapshot) => {
+    try {
+        const response = await axios.get(`https://cs402-1c97e-default-rtdb.europe-west1.firebasedatabase.app/content_analysis_results.json`);
+        const data = response.data;
+        
         let index = 1;
-        snapshot.forEach((childSnapshot) => {
-            const data = childSnapshot.val();
+        for (const [key, value] of Object.entries(data)) {
             const row = document.createElement('tr');
             
             const cellNo = document.createElement('td');
@@ -29,17 +34,22 @@ function fetchData() {
             row.appendChild(cellNo);
 
             const cellName = document.createElement('td');
-            cellName.textContent = data.name;
+            cellName.textContent = key;
             row.appendChild(cellName);
 
             const cellScore = document.createElement('td');
-            cellScore.textContent = data.score;
+            cellScore.textContent = value.total_grades_sum || "N/A"; // Adjust based on your data structure
             row.appendChild(cellScore);
 
             dataTableBody.appendChild(row);
-        });
-    });
+        }
+    } catch (error) {
+        console.error("Error fetching data: ", error);
+    }
 }
 
 // Fetch data on page load
 window.onload = fetchData;
+
+
+

@@ -5,6 +5,8 @@ from GradingProcessor import GradingProcessor
 from ImageProcessor import ImageProcessor
 import numpy as np
 import pandas as pd
+from firebase_admin import db  # Import Firebase Admin database
+
 
 class ContentAnalyzer:
     def __init__(self, input_url, rdf_file="denemequery.rdf", grades_file="grades.xlsx"):
@@ -88,7 +90,14 @@ class ContentAnalyzer:
                 self.result_hashmaps[category] = category_map
             except Exception as e:
                 print(f"{e}")
-        
+      
+    def store_results_in_firebase(self, results):
+        try:
+            ref = db.reference('/')
+            ref.push(results)
+        except Exception as e:
+                print(f"{e}")
+  
 
     def run(self):
         urls_processed, unique_contents_count = self.process_urls()
@@ -97,10 +106,15 @@ class ContentAnalyzer:
         self.process_grades(labels_found)
         print(self.result_hashmaps)
 
-        return {
+        results = {
             "urls_processed": urls_processed,
             #"total_scanned,_images": self.image_processor.total_numbers(),
+            "url" : self.input_url,
             "unique_contents_count": unique_contents_count,
             "result_hashmaps": self.result_hashmaps,
             "total_grades_sum": round(self.total_grades_sum,2)
         }
+
+        self.store_results_in_firebase(results)
+        print( "geldi mi?")
+        return results

@@ -22,6 +22,10 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 		<link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename='logo/favicon.png') }}">
+		<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+		<script type="module" src="/static/js/app.js"></script> <!-- Make sure this path is correct -->
+
 	</head>
         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -339,33 +343,29 @@
 		<!--list-topics end-->
 
 		<!--works start -->
-		<section id="works" class="works">
-			<div class="container">
-				<div class="section-header">
-					<h2>öncekİ araştirmalar</h2>
-					<p>firebaseden gelen datalar gösterilecek</p>
-				</div><!--/.section-header-->
-			</div><!--/.container-->
-
-			<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-			<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
-			<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
-			<div class="data-table-container">
+			<section id="works" class="works">
+				<div class="container">
+					<div class="section-header">
+						<h2>Previous Researches</h2>
+						<p>Data from Firebase will be shown here</p>
+					</div>
+					<div class="data-table-container">
 				<h1>Data Table</h1>
 				<table class="data-table">
-					<thead>
-						<tr>
-							<th>No</th>
-							<th>Name</th>
-							<th>Score</th>
-						</tr>
-					</thead>
-					<tbody id="data-table-body">
-						<!-- Data will be inserted here by JavaScript -->
-					</tbody>
-				</table>
-			</div>
-		</section><!--/.works-->
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Name</th>
+									<th>Score</th>
+								</tr>
+							</thead>
+							<tbody id="data-table-body">
+								<!-- Data will be inserted here by JavaScript -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section><!--/.works-->
 		<!--works end -->
 
 
