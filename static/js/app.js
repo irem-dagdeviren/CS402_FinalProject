@@ -22,8 +22,10 @@ async function fetchData() {
     dataTableBody.innerHTML = ''; // Clear the table body
 
     try {
-        const response = await axios.get(`https://cs402-1c97e-default-rtdb.europe-west1.firebasedatabase.app/content_analysis_results.json`);
+        const response = await axios.get(`https://cs402-1c97e-default-rtdb.europe-west1.firebasedatabase.app/.json`);
         const data = response.data;
+        console.log(response.status)
+        console.log(response)
         
         let index = 1;
         for (const [key, value] of Object.entries(data)) {
@@ -34,7 +36,7 @@ async function fetchData() {
             row.appendChild(cellNo);
 
             const cellName = document.createElement('td');
-            cellName.textContent = key;
+            cellName.textContent = value.url;
             row.appendChild(cellName);
 
             const cellScore = document.createElement('td');
