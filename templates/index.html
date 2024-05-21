@@ -275,8 +275,8 @@
 									<i class="flaticon-transport"></i>
 								</div>
 								<h2><a href="#">Room Information</a></h2>
-									<p id="Video">Video </p>
-									<p id="Description">Description </p>
+									<p id="Capacity">Capacity </p>
+									<p id="Price">Price </p>
 									<p id="Amenities">Amenities / Facilities </p>
 							</div>
 						</li>
@@ -345,96 +345,26 @@
 					<h2>öncekİ araştirmalar</h2>
 					<p>firebaseden gelen datalar gösterilecek</p>
 				</div><!--/.section-header-->
-				<div class="works-content">
-					<div class="row">
-						<div class="col-md-4 col-sm-6">
-							<div class="single-how-works">
-								<div class="single-how-works-icon">
-									<i class="flaticon-networking"></i>
-								</div>
-								<h2><a href="#">otelin <span>  adi</span> buraya gelicek</a></h2>
-								<p>
-									Total puani:
-								</p>
-								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-									read more
-								</button>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="single-how-works">
-								<div class="single-how-works-icon">
-									<i class="flaticon-networking"></i>
-								</div>
-								<h2><a href="#">otelin <span>  adi</span> buraya gelicek</a></h2>
-								<p>
-									Total puani:
-								</p>
-								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-									read more
-								</button>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="single-how-works">
-								<div class="single-how-works-icon">
-									<i class="flaticon-networking"></i>
-								</div>
-								<h2><a href="#">otelin <span>  adi</span> buraya gelicek</a></h2>
-								<p>
-									Total puani:
-								</p>
-								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-									read more
-								</button>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="single-how-works">
-								<div class="single-how-works-icon">
-									<i class="flaticon-networking"></i>
-								</div>
-								<h2><a href="#">otelin <span>  adi</span> buraya gelicek</a></h2>
-								<p>
-									Total puani:
-								</p>
-								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-									read more
-								</button>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="single-how-works">
-								<div class="single-how-works-icon">
-									<i class="flaticon-networking"></i>
-								</div>
-								<h2><a href="#">otelin <span>  adi</span> buraya gelicek</a></h2>
-								<p>
-									Total puani:
-								</p>
-								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-									read more
-								</button>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6">
-							<div class="single-how-works">
-								<div class="single-how-works-icon">
-									<i class="flaticon-networking"></i>
-								</div>
-								<h2><a href="#">otelin <span>  adi</span> buraya gelicek</a></h2>
-								<p>
-									Total puani:
-								</p>
-								<button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-									read more
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div><!--/.container-->
-		
+
+			<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+			<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+			<div class="data-table-container">
+				<h1>Data Table</h1>
+				<table class="data-table">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Name</th>
+							<th>Score</th>
+						</tr>
+					</thead>
+					<tbody id="data-table-body">
+						<!-- Data will be inserted here by JavaScript -->
+					</tbody>
+				</table>
+			</div>
 		</section><!--/.works-->
 		<!--works end -->
 
@@ -602,6 +532,7 @@
 					const data = response.data
 					
 					if (data.result_hashmaps ){
+						console.log(data.result_hashmaps)
 						if (data.result_hashmaps.Currency) {
                             const currencyMap = data.result_hashmaps.Currency;
                             document.getElementById('USD').innerText = 'USD: ' + (currencyMap.USD !== undefined ? currencyMap.USD : 'N/A');
@@ -614,6 +545,7 @@
                         // Update Languages
                         if (data.result_hashmaps.Language) {
                             const languageMap = data.result_hashmaps.Language;
+							console.log(languageMap)
                             document.getElementById('English').innerText = 'English: ' + (languageMap.English !== undefined ? languageMap.English : 'N/A');
                             document.getElementById('Türkçe').innerText = 'Türkçe: ' + (languageMap.Türkçe !== undefined ? languageMap.Türkçe : 'N/A');
                             document.getElementById('Deutsch').innerText = 'Deutsch: ' + (languageMap.Deutsch !== undefined ? languageMap.Deutsch : 'N/A');
@@ -626,7 +558,8 @@
                         // Update Reservation
                         if (data.result_hashmaps.Reservation) {
                             const reservationMap = data.result_hashmaps.Reservation;
-                            document.getElementById('Adult').innerText = 'Adult: ' + (reservationMap.Adult !== undefined ? reservationMap.Adult : 'N/A');
+							console.log(reservationMap)
+                            document.getElementById('Adult').innerText = 'Adult: ' + (reservationMap.AdultChildren !== undefined ? reservationMap.AdultChildren : 'N/A');
                             document.getElementById('Arrival').innerText = 'Arrival: ' + (reservationMap.Arrival !== undefined ? reservationMap.Arrival : 'N/A');
                             document.getElementById('Departure').innerText = 'Departure: ' + (reservationMap.Departure !== undefined ? reservationMap.Departure : 'N/A');
                             document.getElementById('BookButton').innerText = 'Book Button: ' + (reservationMap.BookButton !== undefined ? reservationMap.BookButton : 'N/A');
@@ -635,6 +568,7 @@
                         // Update Hotel Policies
                         if (data.result_hashmaps.HotelPolicies) {
                             const hotelPoliciesMap = data.result_hashmaps.HotelPolicies;
+							console.log(hotelPoliciesMap)
                             document.getElementById('CancellationPolicy').innerText = 'Cancellation Policy: ' + (hotelPoliciesMap.CancellationPolicy !== undefined ? hotelPoliciesMap.CancellationPolicy : 'N/A');
                             document.getElementById('CookiePolicy').innerText = 'Cookie Policy: ' + (hotelPoliciesMap.CookiePolicy !== undefined ? hotelPoliciesMap.CookiePolicy : 'N/A');
                             document.getElementById('HotelPolicy').innerText = 'Hotel Policies: ' + (hotelPoliciesMap.HotelPolicy !== undefined ? hotelPoliciesMap.HotelPolicy : 'N/A');
@@ -644,6 +578,7 @@
                         // Update Social Media
                         if (data.result_hashmaps.SocialMedia) {
                             const socialMediaMap = data.result_hashmaps.SocialMedia;
+							console.log(socialMediaMap)
                             document.getElementById('Instagram').innerText = 'Instagram: ' + (socialMediaMap.Instagram !== undefined ? socialMediaMap.Instagram : 'N/A');
                             document.getElementById('Facebook').innerText = 'Facebook: ' + (socialMediaMap.Facebook !== undefined ? socialMediaMap.Facebook : 'N/A');
                             document.getElementById('Twitter').innerText = 'Twitter: ' + (socialMediaMap.Twitter !== undefined ? socialMediaMap.Twitter : 'N/A');
@@ -652,19 +587,23 @@
                         // Update Maps
                         if (data.result_hashmaps.Map) {
                             const mapMap = data.result_hashmaps.Map;
-                            document.getElementById('GoogleMaps').innerText = 'Google Maps: ' + (mapMap.Map !== undefined ? mapMap.GoogleMaps : 'N/A');
+							console.log(mapMap)
+
+                            document.getElementById('GoogleMaps').innerText = 'Google Maps: ' + (mapMap.MapInformation !== undefined ? mapMap.MapInformation : 'N/A');
                         }
 
                         // Update Review
                         if (data.result_hashmaps.Review) {
                             const reviewMap = data.result_hashmaps.Review;
-                            document.getElementById('Testimonials').innerText = 'Testimonials: ' + (reviewMap.Testimonials !== undefined ? reviewMap.Testimonials : 'N/A');
+							console.log(reviewMap)
+                            document.getElementById('Testimonials').innerText = 'Testimonials: ' + (reviewMap.Reviews !== undefined ? reviewMap.Testimonials : 'N/A');
                             document.getElementById('TripAdvisor').innerText = 'Trip Advisor: ' + (reviewMap.TripAdvisor !== undefined ? reviewMap.TripAdvisor : 'N/A');
                         }
 
                         // Update Forms
                         if (data.result_hashmaps.Form) {
                             const formMap = data.result_hashmaps.Form;
+							console.log(formMap)
                             document.getElementById('QuestionForms').innerText = 'Question Forms: ' + (formMap.QuestionForm !== undefined ? formMap.QuestionForm : 'N/A');
                             document.getElementById('Surveys').innerText = 'Surveys: ' + (formMap.FeedbackSurvey !== undefined ? formMap.FeedbackSurvey : 'N/A');
                         }
@@ -672,6 +611,8 @@
                         // Update Contact Information
                         if (data.result_hashmaps.Contact) {
                             const contactMap = data.result_hashmaps.Contact;
+							console.log(contactMap)
+
                             document.getElementById('Phone').innerText = 'Phone: ' + (contactMap.Phone !== undefined ? contactMap.Phone : 'N/A');
                             document.getElementById('Mail').innerText = 'Mail: ' + (contactMap.Mail !== undefined ? contactMap.Mail : 'N/A');
                             document.getElementById('WhatsApp').innerText = 'WhatsApp: ' + (contactMap.Whatsapp !== undefined ? contactMap.Whatsapp : 'N/A');
@@ -680,6 +621,8 @@
                         // Update About Hotel
                         if (data.result_hashmaps.About) {
                             const aboutMap = data.result_hashmaps.About;
+							console.log(aboutMap)
+
                             document.getElementById('Location').innerText = 'Location: ' + (aboutMap.Location !== undefined ? aboutMap.Location : 'N/A');
                             document.getElementById('AboutUs').innerText = 'About Us Section: ' + (aboutMap.AboutUs !== undefined ? aboutMap.AboutUs : 'N/A');
                         }
@@ -687,39 +630,53 @@
                         // Update Website Certificate
                         if (data.result_hashmaps.Security) {
                             const securityMap = data.result_hashmaps.Security;
+							console.log(securityMap)
+
                             document.getElementById('WebsiteSecurity').innerText = 'Website Security: ' + (securityMap.WebsiteSecurity !== undefined ? securityMap.WebsiteSecurity : 'N/A');
                         }
 
                         // Update Room Information
                         if (data.result_hashmaps.Room) {
                             const roomMap = data.result_hashmaps.Room;
-                            document.getElementById('Video').innerText = 'Video: ' + (roomMap.Video !== undefined ? roomMap.Video : 'N/A');
-                            document.getElementById('Description').innerText = 'Description: ' + (roomMap.Description !== undefined ? roomMap.Description : 'N/A');
-                            document.getElementById('Amenities').innerText = 'Amenities / Facilities: ' + (roomMap.Amenities !== undefined ? roomMap.Amenities : 'N/A');
+							console.log(roomMap)
+
+                            document.getElementById('Capacity').innerText = 'Video: ' + (roomMap.Capacity !== undefined ? roomMap.Capacity : 'N/A');
+                            document.getElementById('Price').innerText = 'Description: ' + (roomMap.Price !== undefined ? roomMap.Price : 'N/A');
+                            document.getElementById('Amenities').innerText = 'Amenities / Facilities: ' + (roomMap.AmenitiesFacilities !== undefined ? roomMap.AmenitiesFacilities : 'N/A');
                         }
 
                         // Update Gallery
                         if (data.result_hashmaps.Gallery) {
                             const galleryMap = data.result_hashmaps.Gallery;
-                            document.getElementById('PhotoGallery').innerText = 'Photo Gallery: ' + (galleryMap.PhotoGallery !== undefined ? galleryMap.PhotoGallery : 'N/A');
+							console.log(galleryMap.gallery)
+							console.log(galleryMap)
+
+                            document.getElementById('PhotoGallery').innerText = 'Photo Gallery: ' + (galleryMap.gallery !== undefined ? galleryMap.gallery : 'N/A');
                         }
 
                         // Update Subscriptions
-                        if (data.result_hashmaps.Subscriptions) {
-                            const subscriptionsMap = data.result_hashmaps.Subscriptions;
-                            document.getElementById('JournalSubscriptions').innerText = 'Journal Subscriptions: ' + (subscriptionsMap.JournalSubscriptions !== undefined ? subscriptionsMap.JournalSubscriptions : 'N/A');
-                            document.getElementById('NewsletterSubscriptions').innerText = 'Newsletter Subscriptions: ' + (subscriptionsMap.NewsletterSubscriptions !== undefined ? subscriptionsMap.NewsletterSubscriptions : 'N/A');
+                        if (data.result_hashmaps.Subscription) {
+                            const subscriptionsMap = data.result_hashmaps.Subscription;
+							console.log(subscriptionsMap)
+
+                            document.getElementById('JournalSubscriptions').innerText = 'Journal Subscriptions: ' + (subscriptionsMap.JournalSubscription !== undefined ? subscriptionsMap.JournalSubscription : 'N/A');
+                            document.getElementById('NewsletterSubscriptions').innerText = 'Newsletter Subscriptions: ' + (subscriptionsMap.Newsletter !== undefined ? subscriptionsMap.Newsletter : 'N/A');
                         }
 
                         // Update Special Offers
                         if (data.result_hashmaps.SpecialOffer) {
                             const specialOfferMap = data.result_hashmaps.SpecialOffer;
-                            document.getElementById('SpecialOfferSection').innerText = 'Special Offer Section: ' + (specialOfferMap.SpecialOfferSection !== undefined ? specialOfferMap.SpecialOfferSection : 'N/A');
+							console.log(specialOfferMap.Offers)
+							console.log(specialOfferMap)
+
+                            document.getElementById('SpecialOfferSection').innerText = 'Special Offer Section: ' + (specialOfferMap.Offers !== undefined ? specialOfferMap.Offers : 'N/A');
                         }
 
                         // Update Friendly User Interface
                         if (data.result_hashmaps.UserInterface) {
                             const userInterfaceMap = data.result_hashmaps.UserInterface;
+							console.log(userInterfaceMap)
+
                             document.getElementById('Photos').innerText = 'Photos: ' + (userInterfaceMap.Photo !== undefined ? userInterfaceMap.Photo : 'N/A');
                             document.getElementById('Searchbar').innerText = 'Searchbar: ' + (userInterfaceMap.Searchbar !== undefined ? userInterfaceMap.Searchbar : 'N/A');
                             document.getElementById('Sliders').innerText = 'Sliders: ' + (userInterfaceMap.Slider !== undefined ? userInterfaceMap.Slider : 'N/A');
@@ -729,12 +686,15 @@
                         // Update User Experience
                         if (data.result_hashmaps.UserExperience) {
                             const userExperienceMap = data.result_hashmaps.UserExperience;
+							console.log(userExperienceMap)
+
                             document.getElementById('VirtualTour').innerText = 'Virtual Tour: ' + (userExperienceMap.VirtualTour !== undefined ? userExperienceMap.VirtualTour : 'N/A');
                             document.getElementById('Chatbot').innerText = 'Chatbot: ' + (userExperienceMap.Chatbot !== undefined ? userExperienceMap.Chatbot : 'N/A');
                             document.getElementById('WeatherForecast').innerText = 'Weather Forecast: ' + (userExperienceMap.Weather !== undefined ? userExperienceMap.Weather : 'N/A');
                         }
 						if(data.total_grades_sum){
 							const result = data.total_grades_sum;
+							console.error(result)
                             document.getElementById('score').innerText = (result !== undefined ? result : 'N/A');
                         
 						}

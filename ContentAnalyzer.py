@@ -66,26 +66,28 @@ class ContentAnalyzer:
 
     def process_grades(self, labels_found):
         grades = self.grading_processor.read_grades(self.grades_file)
-        
+    
         for category, items in self.leaf_classes.items():
             category_map = {}
-            for item in items:
-                if item == "AboutUs":
-                    category_map[item] = 1 if np.isin(0, labels_found) else 0
-                elif item == "Amenities":
-                    category_map[item] = 1 if np.isin(1, labels_found) else 0
-                elif item == "Location":
-                    category_map[item] = 1 if np.isin(3, labels_found) else 0
-                else:
-                    item_synonyms = self.instancesdict.get(item, [item])
-                    present = any(any(syn in text for syn in item_synonyms) for text in self.all_unique)
-                    category_map[item] = 1 if present else 0
-                
-                if category_map[item] == 1 and item in grades:
-                    category_map[item] *= round(grades[item],2)
-                    self.total_grades_sum += round(grades[item],2)
-            print(category_map)
-            self.result_hashmaps[category] = category_map
+            try:
+                for item in items:
+                    if item == "AboutUs":
+                        category_map[item] = 1 if np.isin(0, labels_found) else 0
+                    elif item == "Amenities-Facilities":
+                        category_map[item] = 1 if np.isin(1, labels_found) else 0
+                    elif item == "Location":
+                        category_map[item] = 1 if np.isin(3, labels_found) else 0
+                    else:
+                        item_synonyms = self.instancesdict.get(item, [item])
+                        present = any(any(syn in text for syn in item_synonyms) for text in self.all_unique)
+                        category_map[item] = 1 if present else 0
+                    
+                    if category_map[item] == 1 and item in grades:
+                        category_map[item] *= round(grades[item],2)
+                        self.total_grades_sum += round(grades[item],2)
+                self.result_hashmaps[category] = category_map
+            except Exception as e:
+                print(f"{e}")
         
 
     def run(self):
@@ -100,5 +102,5 @@ class ContentAnalyzer:
             #"total_scanned,_images": self.image_processor.total_numbers(),
             "unique_contents_count": unique_contents_count,
             "result_hashmaps": self.result_hashmaps,
-            "total_grades_sum": self.total_grades_sum
+            "total_grades_sum": round(self.total_grades_sum,2)
         }

@@ -43,7 +43,7 @@ class URLProcessor:
                     return find_most_inner_content(inner_divs[-1])
 
             for div in all_divs:
-                most_inner_content = find_most_inner_content(div)
+                most_inner_content = find_most_inner_content(div).lower()
                 unique_contents.add(most_inner_content)
 
             all_unique.update(unique_contents)
