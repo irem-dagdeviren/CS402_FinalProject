@@ -24,32 +24,36 @@ async function fetchData() {
     try {
         const response = await axios.get(`https://cs402-1c97e-default-rtdb.europe-west1.firebasedatabase.app/.json`);
         const data = response.data;
-        console.log(response.status)
-        console.log(response)
-        
+
+        // Convert object to array and sort by score in ascending order
+        const sortedData = Object.entries(data).map(([key, value]) => ({
+            key: key,
+            url: value.url,
+            score: value.total_grades_sum
+        })).sort((a, b) => b.score - a.score);
+
         let index = 1;
-        for (const [key, value] of Object.entries(data)) {
+        sortedData.forEach((item) => {
             const row = document.createElement('tr');
-            
+
             const cellNo = document.createElement('td');
             cellNo.textContent = index++;
             row.appendChild(cellNo);
 
             const cellName = document.createElement('td');
             const link = document.createElement('a');
-            link.href = value.url;
+            link.href = item.url;
             link.target = "_blank"; // Open in a new tab
-            link.textContent = value.url;
+            link.textContent = item.url;
             cellName.appendChild(link);
             row.appendChild(cellName);
 
-
             const cellScore = document.createElement('td');
-            cellScore.textContent = value.total_grades_sum || "N/A"; // Adjust based on your data structure
+            cellScore.textContent = item.score || "N/A"; // Adjust based on your data structure
             row.appendChild(cellScore);
 
             dataTableBody.appendChild(row);
-        }
+        });
     } catch (error) {
         console.error("Error fetching data: ", error);
     }
@@ -57,6 +61,4 @@ async function fetchData() {
 
 // Fetch data on page load
 window.onload = fetchData;
-
-
 

@@ -114,7 +114,5 @@ class ContentAnalyzer:
             "result_hashmaps": self.result_hashmaps,
             "total_grades_sum": round(self.total_grades_sum,2)
         }
-        print(self.all_unique)
         self.store_results_in_firebase(results)
-        print( "geldi mi?")
         return results
