@@ -39,6 +39,7 @@ $(document).ready(function(){
 	$(".testimonial-carousel").slick({
 		infinite: true,
 		autoplay: true,
+		centerMode: true,
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		autoplaySpeed: 2000,
@@ -73,8 +74,8 @@ $(document).ready(function(){
 			}
 		]
 	});
-	
-	
+
+
 
 
 

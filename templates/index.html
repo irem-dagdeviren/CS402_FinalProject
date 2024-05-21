@@ -10,7 +10,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         
         <!-- title of site -->
-        <title>Directory Landing Page</title>
+        <title>Hotel Websites Assessment Tool</title>
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootsnav.css') }}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}">
@@ -45,37 +45,7 @@
         <![endif]-->
 		
 		<!--header-top start -->
-		<header id="header-top" class="header-top">
-			<ul>
-				<li>
-					<div class="header-top-left">
-						<ul>
-							<li class="select-opt">
-								<select name="language" id="language">
-									<option value="default">EN</option>
-									<option value="Türkçe">TR</option>
 
-								</select>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li class="head-responsive-right pull-right">
-					<div class="header-top-right">
-						<ul>
-							<li class="header-top-contact">
-								<a href="#">sign in</a>
-							</li>
-							<li class="header-top-contact">
-								<a href="#">register</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-					
-		</header><!--/.header-top-->
-		<!--header-top end -->
 
 		<!-- top-area Start -->
 		<section class="top-area">
@@ -90,7 +60,7 @@
 			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
 			                    <i class="fa fa-bars"></i>
 			                </button>
-			                <a class="navbar-brand" href="#">Hotel Website <span>Assestment Tool</span></a>
+			                <a class="navbar-brand" href="#">Hotel Website <span>Assessment Tool</span></a>
 
 			            </div><!--/.navbar-header-->
 			            <!-- End Header Navigation -->
@@ -100,8 +70,8 @@
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 			                    <li class=" scroll active"><a href="#home">home</a></li>
 			                    <li class="scroll"><a href="#list-topics">scores</a></li>
-			                    <li class="scroll"><a href="#works">works</a></li>
-			                    <li class="scroll"><a href="#reviews">contact</a></li>
+			                    <li class="scroll"><a href="#works">data table</a></li>
+			                    <li class="scroll"><a href="#reviews">developers</a></li>
 			                </ul><!--/.nav -->
 			            </div><!-- /.navbar-collapse -->
 			        </div><!--/.container-->
@@ -116,7 +86,7 @@
 		<section id="home" class="welcome-hero">
 			<div class="container">
 				<div class="welcome-hero-txt">
-					<h2>best place to find and explore <br> that all you need </h2>
+					<h2>best place to enhance your website <br> for your better marketing </h2>
 					<p>
 						Find Best Place, Restaurant, Hotel, Real Estate, and many more things in just one click.
 					</p>
@@ -349,8 +319,7 @@
 			<section id="works" class="works">
 				<div class="container">
 					<div class="section-header">
-						<h2>Previous Researches</h2>
-						<p>Data from Firebase will be shown here</p>
+						<h2>Previous Scores</h2>
 					</div>
 					<div class="data-table-container">
 				<h1>Data Table</h1>
@@ -375,7 +344,7 @@
 		<!--reviews start -->
 		<section id="reviews" class="reviews">
 			<div class="section-header">
-				<h2>Contact</h2>
+				<h2>Developers</h2>
 				<p>Feel free to contact with us!</p>
 			</div><!--/.section-header-->
 			<div class="reviews-content">
@@ -411,7 +380,7 @@
 							</div><!--/.testimonial-info-->
 							<div class="testimonial-comment">
 								<p>
-									ceren.sahin@ozu.edu.tr								
+									ceren.sahin.21346@ozu.edu.tr
 								</p>
 							</div><!--/.testimonial-comment-->
 						</div><!--/.testimonial-description-->
@@ -429,7 +398,61 @@
 							</div><!--/.testimonial-info-->
 							<div class="testimonial-comment">
 								<p>
-									oguz.sahin@ozu.edu.tr
+									oguz.sahin.20742@ozu.edu.tr
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+					<div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="{{ url_for('static', filename='images/clients/c1.png') }}" alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2>İrem DAĞDEVİREN</h2>
+									<h4>Computer Science Student</h4>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									irem.dagdeviren@ozu.edu.tr
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+				    <div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="{{ url_for('static', filename='images/clients/c2.png') }}" alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2>CEREN ŞAHİN</h2>
+									<h4>Computer Science Student</h4>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									ceren.sahin.21346@ozu.edu.tr
+								</p>
+							</div><!--/.testimonial-comment-->
+						</div><!--/.testimonial-description-->
+					</div><!--/.single-testimonial-box-->
+				    <div class="single-testimonial-box">
+						<div class="testimonial-description">
+							<div class="testimonial-info">
+								<div class="testimonial-img">
+									<img src="{{ url_for('static', filename='images/clients/c3.png') }}" alt="clients">
+								</div><!--/.testimonial-img-->
+								<div class="testimonial-person">
+									<h2>Oğuz ŞAHİN</h2>
+									<h4>Computer Science Student</h4>
+								</div><!--/.testimonial-person-->
+							</div><!--/.testimonial-info-->
+							<div class="testimonial-comment">
+								<p>
+									oguz.sahin.20742@ozu.edu.tr
 								</p>
 							</div><!--/.testimonial-comment-->
 						</div><!--/.testimonial-description-->
@@ -447,15 +470,15 @@
 		           	<div class="row">
 			           	<div class="col-sm-3">
 			           		 <div class="navbar-header">
-				                <a class="navbar-brand" href="#">Hotel Website<span>Assestment Tool</span></a>
+				                <a class="navbar-brand" href="#">Hotel Website<span>Assessment Tool</span></a>
 				            </div><!--/.navbar-header-->
 			           	</div>
 			           	<div class="col-sm-9">
 			           		<ul class="footer-menu-item">
 								<li class=" scroll active"><a href="#home">home</a></li>
 			                    <li class="scroll"><a href="#list-topics">scores</a></li>
-			                    <li class="scroll"><a href="#works">works</a></li>
-			                    <li class="scroll"><a href="#reviews">contact</a></li>
+			                    <li class="scroll"><a href="#works">data table</a></li>
+			                    <li class="scroll"><a href="#reviews">developers</a></li>
 			                </ul><!--/.nav -->
 			           	</div>
 		           </div>
@@ -466,14 +489,6 @@
 							<p>
 								&copy;Ozyegin University CS402 Project
 							</p><!--/p-->
-						</div>
-						<div class="col-sm-7">
-							<div class="footer-social">
-								<a href="#"><i class="fa fa-facebook"></i></a>	
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
-								<a href="#"><i class="fa fa-google-plus"></i></a>
-							</div>
 						</div>
 					</div>
 					
