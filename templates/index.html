@@ -650,7 +650,7 @@
                             document.getElementById('Location').innerText = 'Location: ' + (aboutMap.Location !== undefined ? aboutMap.Location : 'N/A');
                             document.getElementById('AboutUs').innerText = 'About Us Section: ' + (aboutMap.AboutUs !== undefined ? aboutMap.AboutUs : 'N/A');
                             console.log(aboutMap.AmenitiesFacilities)
-                            document.getElementById('Amenities').innerText = 'Amenities / Facilities: ' + (aboutMap.AmenitiesFacilities !== undefined ? aboutMap.AmenitiesFacilities : 'N/A');
+                            document.getElementById('Amenities').innerText = 'Amenities / Facilities: ' + (aboutMap.AmenitiesFacilites !== undefined ? aboutMap.AmenitiesFacilites : 'N/A');
                         }
 
                         // Update Website Certificate
@@ -674,8 +674,6 @@
                         // Update Gallery
                         if (data.result_hashmaps.Gallery) {
                             const galleryMap = data.result_hashmaps.Gallery;
-							console.log(galleryMap.gallery)
-							console.log(galleryMap)
 
                             document.getElementById('ExperientialPhotos').innerText = 'Experiential Photo: ' + (galleryMap.ExperientialPhotos !== undefined ? galleryMap.ExperientialPhotos : 'N/A');
                             document.getElementById('PhotoGallery').innerText = 'Photo Gallery: ' + (galleryMap.Photos !== undefined ? galleryMap.Photos : 'N/A');
