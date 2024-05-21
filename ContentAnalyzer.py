@@ -96,13 +96,33 @@ class ContentAnalyzer:
             ref.push(results)
         except Exception as e:
                 print(f"{e}")
-  
+
+    '''
+      def is_valid_turkish_phone_number(text_list):
+        # Regex pattern to strictly match Turkish phone numbers
+       
+        # Check if the phone number matches the pattern using the VERBOSE flag to allow for multiline regex with comments
+        
+        pattern = r"""
+            (?:\+?90|-?90|\(90\))     # Match international prefix +90, 90, (90) or start with 0, with optional spaces or dashes
+            (?:\s*\(?\d{3}\)?\s*-?)?    # Optional area code (3 digits) with optional parentheses and dash, possibly with spaces
+            \s*\d{3}\s*-?\s*\d{4}       # Three digits followed by optional space or dash, then four digits
+        """
+        valid_numbers = []
+        for text in text_list:
+            # Use findall to search for matches within the string
+            numbers = re.findall(pattern, text, re.VERBOSE)
+            valid_numbers.extend(numbers)  # Add all found numbers to the list
+    
+        return valid_numbers
+    '''
+
 
     def run(self):
         urls_processed, unique_contents_count, component_df = self.process_urls()
         self.process_rdf()
         labels_found = self.process_texts(component_df)
-        print(labels_found)
+        print(self.all_unique)
         self.process_grades(labels_found)
         print(self.result_hashmaps)
 
