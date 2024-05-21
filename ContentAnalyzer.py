@@ -31,7 +31,6 @@ class ContentAnalyzer:
             # print(self.image_processor.total_numbers())
             self.url_processor.find_components(url, self.all_unique)
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
-        # df.to_csv('unique_contents.csv', index=False)
         return len(urls), len(self.all_unique), df
 
     def process_rdf(self):
@@ -103,6 +102,7 @@ class ContentAnalyzer:
         urls_processed, unique_contents_count, component_df = self.process_urls()
         self.process_rdf()
         labels_found = self.process_texts(component_df)
+        print(labels_found)
         self.process_grades(labels_found)
         print(self.result_hashmaps)
 

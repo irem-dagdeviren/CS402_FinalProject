@@ -42,17 +42,12 @@ class TextProcessor:
         mnb = MultinomialNB()
         mnb.fit(X_train, y_train)
         y_pred = mnb.predict(X_test)
-        cm = confusion_matrix(y_test, y_pred)
         print("Naive Bayes accuracy is ", round(accuracy_score(y_test, y_pred), 2) * 100, "%")
-        print("\n")
-        print("Confusion matrix for Naive Bayes ")
-        # disp = ConfusionMatrixDisplay(confusion_matrix=cm)
-        # disp.plot()
+
         return mnb
 
     def predicting_new_labels(self, df, cv, mnb):
-        # new_excel = pd.read_csv(new_file_path)
-        # new_excel.dropna(inplace=True)
+
         df.dropna(inplace=True)
         new = cv.transform(df["Unique Content"]).toarray()
         new_labels = mnb.predict(new)

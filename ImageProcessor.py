@@ -65,7 +65,6 @@ class ImageProcessor:
     def is_duplicate_url(self, url):
         """Check if the URL is a duplicate before fetching images."""
         if url in self.processed_urls:
-            #print(f"Skipping duplicate URL: {url}")
             return False
         else:
             self.processed_urls.add(url)
