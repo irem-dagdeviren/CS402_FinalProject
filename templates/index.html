@@ -130,7 +130,9 @@
 						</div>
 					</div>
 					<div class="welcome-hero-serch">
-						<button class="welcome-hero-btn" id="search-button">search  <i data-feather="search"></i></button>
+						<button class="welcome-hero-btn" id="search-button">search  <i data-feather="search"></i>
+							<div id="loading-spinner" class="spinner" style="display: none;"></div>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -525,9 +527,13 @@
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const urlInput = document.getElementById('url-input');
+			const loadingSpinner = document.getElementById('loading-spinner');
+
 
             const handleClick = async () => {
                 const url = urlInput.value;
+				loadingSpinner.style.display = 'inline-block'; // Show the spinner
+
                 try {
                     const response = await axios.get(`http://127.0.0.1:5000/run-python-code?url=${encodeURIComponent(url)}`);
 					const data = response.data
@@ -704,6 +710,10 @@
                 } catch (error) {
                     console.error('Error executing Python code:', error);
                 }
+				finally{
+					loadingSpinner.style.display = 'none'; // Show the spinner
+
+				}
             };
 
             document.getElementById('search-button').addEventListener('click', handleClick);
