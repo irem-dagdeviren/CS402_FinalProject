@@ -6,6 +6,7 @@ from ImageProcessor import ImageProcessor
 import numpy as np
 import pandas as pd
 from firebase_admin import db  # Import Firebase Admin database
+import re
 
 
 class ContentAnalyzer:
@@ -32,7 +33,18 @@ class ContentAnalyzer:
             self.url_processor.find_components(url, self.all_unique)
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
         return len(urls), len(self.all_unique), df
-
+    def is_valid_turkish_phone_number(self, text_list):
+        # Regex pattern to strictly match Turkish phone numbers
+        pattern = r"""
+            (?:\+?90|-?90|\(90\))     # Match international prefix +90, 90, (90) or start with 0, with optional spaces or dashes
+            (?:\s*\(?\d{3}\)?\s*-?)?    # Optional area code (3 digits) with optional parentheses and dash, possibly with spaces
+            \s*\d{3}\s*-?\s*\d{4}       # Three digits followed by optional space or dash, then four digits
+        """
+        for text in text_list:
+            # Use findall to search for matches within the string
+            if re.findall(pattern, text, re.VERBOSE):
+                return True
+        return False
     def process_rdf(self):
         if not self.rdf_processor.graph:
             raise RuntimeError("RDF graph is empty.")
@@ -78,6 +90,9 @@ class ContentAnalyzer:
                         category_map[item] = 1 if np.isin(1, labels_found) else 0
                     elif item == "Location":
                         category_map[item] = 1 if np.isin(3, labels_found) else 0
+                    elif item == "Phone":
+                        present = self.is_valid_turkish_phone_number(self.all_unique)
+                        category_map[item] = 1 if present else 0
                     else:
                         item_synonyms = self.instancesdict.get(item, [item])
                         present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
@@ -96,28 +111,6 @@ class ContentAnalyzer:
             ref.push(results)
         except Exception as e:
                 print(f"{e}")
-
-    '''
-      def is_valid_turkish_phone_number(text_list):
-        # Regex pattern to strictly match Turkish phone numbers
-       
-        # Check if the phone number matches the pattern using the VERBOSE flag to allow for multiline regex with comments
-        
-        pattern = r"""
-            (?:\+?90|-?90|\(90\))     # Match international prefix +90, 90, (90) or start with 0, with optional spaces or dashes
-            (?:\s*\(?\d{3}\)?\s*-?)?    # Optional area code (3 digits) with optional parentheses and dash, possibly with spaces
-            \s*\d{3}\s*-?\s*\d{4}       # Three digits followed by optional space or dash, then four digits
-        """
-        valid_numbers = []
-        for text in text_list:
-            # Use findall to search for matches within the string
-            numbers = re.findall(pattern, text, re.VERBOSE)
-            valid_numbers.extend(numbers)  # Add all found numbers to the list
-    
-        return valid_numbers
-    '''
-
-
     def run(self):
         urls_processed, unique_contents_count, component_df = self.process_urls()
         self.process_rdf()
