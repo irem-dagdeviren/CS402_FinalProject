@@ -22,7 +22,7 @@ class URLProcessor:
             hasTripAdvisor = False
             for a_tag in soup.find_all('a', href=True):
                 absolute_url = urljoin(url, a_tag['href'])
-                normalized_url = absolute_url #self.normalize_url(absolute_url)
+                normalized_url = self.normalize_url(absolute_url)
                 print(normalized_url)
                 if('instagram' in normalized_url.lower() ):
                     hasInstagram = True
