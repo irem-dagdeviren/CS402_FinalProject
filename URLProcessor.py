@@ -40,8 +40,16 @@ class URLProcessor:
             return links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap
         except requests.exceptions.RequestException as e:
             print(f"Error fetching {url}: {e}")
+
             return set()
 
+    def is_duplicate_url(self, url):
+        """Check if the URL is a duplicate before fetching images."""
+        if url in self.processed_urls:
+            return False
+        else:
+            self.processed_urls.add(url)
+            return True
     def find_components(self, url, all_unique):
         try:
             response = requests.get(url)
