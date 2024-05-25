@@ -1,10 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, urlunparse
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
+
 from langdetect import detect, LangDetectException
 
 class URLProcessor:
@@ -19,14 +16,16 @@ class URLProcessor:
         return normalized
 
     def get_all_links(self, url):
-        options = Options()
-        options.headless = True
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
         try:
-            driver.get(url)
-            soup = BeautifulSoup(driver.page_source, 'html.parser')
+            response = requests.get(url)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, 'html.parser')
             links = set()
-            hasInstagram = hasFacebook = hasTwitter = hasTripAdvisor = hasMaps = False
+            hasInstagram = False
+            hasFacebook = False
+            hasTwitter = False
+            hasTripAdvisor = False
+            hasMap = False
 
             for a_tag in soup.find_all('a', href=True):
                 absolute_url = urljoin(url, a_tag['href'])
@@ -40,14 +39,14 @@ class URLProcessor:
                     hasTwitter = True
                 if 'tripadvisor' in normalized_url.lower():
                     hasTripAdvisor = True
+                if ('maps' in normalized_url.lower()):
+                    hasMap = True
                 links.add(normalized_url)
 
-            return links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMaps
+            return links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap
         except Exception as e:
             print(f"Error fetching {url}: {e}")
             return set(), False, False, False, False, False
-        finally:
-            driver.quit()
 
     def find_components(self, url, all_unique):
         try:
@@ -102,10 +101,11 @@ class URLProcessor:
 
 # Usage example
 processor = URLProcessor()
-links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMaps = processor.get_all_links('https://example.com')
+links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap = processor.get_all_links('https://example.com')
 print(f"Links: {links}")
 print(f"Has Instagram: {hasInstagram}")
 print(f"Has Facebook: {hasFacebook}")
 print(f"Has Twitter: {hasTwitter}")
 print(f"Has TripAdvisor: {hasTripAdvisor}")
+print(f"Has Maps: {hasMap}")
 print(f"Languages: {processor.languages}")

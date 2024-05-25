@@ -194,7 +194,6 @@
 									<i class="flaticon-transport"></i>
 								</div>
 								<h2><a href="#">Review</a></h2>
-								<p id="Testimonials">Testimonials</p>
 								<p id="TripAdvisor">Trip Advisor</p>
 							</div>
 						</li>
@@ -285,7 +284,6 @@
 									<i class="flaticon-transport"></i>
 								</div>
 								<h2><a href="#">Friendly User Interface</a></h2>
-								<p id="Photos">Photos </p>
 								<p id="Searchbar">Searchbar </p>
 								<p id="Sliders">Sliders </p>
 								<p id="DatePickers">Date Pickers </p>
@@ -612,7 +610,6 @@
                         if (data.result_hashmaps.Review) {
                             const reviewMap = data.result_hashmaps.Review;
 							console.log(reviewMap)
-                            document.getElementById('Testimonials').innerText = 'Testimonials: ' + (reviewMap.Reviews !== undefined ? reviewMap.Reviews : 'N/A');
                             document.getElementById('TripAdvisor').innerText = 'Trip Advisor: ' + (reviewMap.TripAdvisor !== undefined ? reviewMap.TripAdvisor : 'N/A');
                         }
 
@@ -657,8 +654,8 @@
                             const roomMap = data.result_hashmaps.Room;
 							console.log(roomMap)
 
-                            document.getElementById('Capacity').innerText = 'Video: ' + (roomMap.Capacity !== undefined ? roomMap.Capacity : 'N/A');
-                            document.getElementById('Price').innerText = 'Description: ' + (roomMap.Price !== undefined ? roomMap.Price : 'N/A');
+                            document.getElementById('Capacity').innerText = 'Capacity: ' + (roomMap.Capacity !== undefined ? roomMap.Capacity : 'N/A');
+                            document.getElementById('Price').innerText = 'Price: ' + (roomMap.Price !== undefined ? roomMap.Price : 'N/A');
 
                         }
 
@@ -693,7 +690,6 @@
                             const userInterfaceMap = data.result_hashmaps.UserInterface;
 							console.log(userInterfaceMap)
 
-                            document.getElementById('Photos').innerText = 'Photos: ' + (userInterfaceMap.Photo !== undefined ? userInterfaceMap.Photo : 'N/A');
                             document.getElementById('Searchbar').innerText = 'Searchbar: ' + (userInterfaceMap.Searchbar !== undefined ? userInterfaceMap.Searchbar : 'N/A');
                             document.getElementById('Sliders').innerText = 'Sliders: ' + (userInterfaceMap.Slider !== undefined ? userInterfaceMap.Slider : 'N/A');
                             document.getElementById('DatePickers').innerText = 'Date Pickers: ' + (userInterfaceMap.Calendar !== undefined ? userInterfaceMap.Calendar : 'N/A');
