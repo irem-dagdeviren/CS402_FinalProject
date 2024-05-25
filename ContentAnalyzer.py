@@ -33,7 +33,10 @@ class ContentAnalyzer:
 
     def process_urls(self):
         urls, self.instagram, self.facebook, self.twitter, self.tripAdvisor, self.googlemaps= self.url_processor.get_all_links(self.input_url)
+        print(urls)
+
         for url in urls:
+            print("Current url: ", url)
             print(self.image_processor.find_humans(url))
             # print(self.image_processor.total_numbers())
             self.url_processor.find_components(url, self.all_unique)
@@ -91,6 +94,7 @@ class ContentAnalyzer:
             category_map = {}
             try:
                 for item in items:
+                    item_synonyms = self.instancesdict.get(item, [item])
                     if item == "AboutUs":
                         category_map[item] = 1 if np.isin(0, labels_found) else 0
                     elif item == "AmenitiesFacilities":
@@ -115,14 +119,16 @@ class ContentAnalyzer:
                         category_map[item] = 1 if self.tripAdvisor else 0
                     elif item == "ExperientialPhotos":
                         # number of experiential photos can be change accordingly
-                        category_map[item] = 1 if self.image_processor.total_images_with_human > 10 else 0
+                        category_map[item] = 1 if self.image_processor.total_images_with_human > 5 else 0
                     elif item == "Photos":
                         category_map[item] = 1 if self.image_processor.total_images > 0 else 0
                     elif item == "MapInformation":
-                        category_map[item] = 1 if self.googlemaps else 0
-
+                        if self.googlemaps:
+                            category_map[item] = 1
+                        else:
+                            present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
+                            category_map[item] = 1 if present else 0
                     else:
-                        item_synonyms = self.instancesdict.get(item, [item])
                         present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
                         category_map[item] = 1 if present else 0
                     
@@ -148,7 +154,7 @@ class ContentAnalyzer:
         print(labels_found)
         print(self.all_unique)
     
-# Load the provided Excel file
+        # Load the provided Excel file
         file_path = 'hashmap_results.xlsx'
         existing_df = pd.read_excel(file_path)
 

@@ -2496,13 +2496,17 @@
 
     <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#policies -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#policies"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#policies">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicy"/>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#policy -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#policy"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#policy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#HotelPolicy"/>
+    </owl:NamedIndividual>
     
 
 
@@ -2934,7 +2938,9 @@
 
     <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#weather -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#weather"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#weather">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Weather"/>
+    </owl:NamedIndividual>
     
 
 
