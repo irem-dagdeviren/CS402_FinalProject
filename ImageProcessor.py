@@ -93,6 +93,7 @@ class ImageProcessor:
                 human_counts = sum(1 for i in range(len(predictions[0]['labels'])) if
                                    predictions[0]['labels'][i] == 1 and predictions[0]['scores'][i] >= 0.8)
                 if human_counts > 0:
+                    print(img_url)
                     images_with_humans += 1
             except Exception as e:
                 print(f"Failed to process image {img_url}: {e}")
@@ -101,6 +102,5 @@ class ImageProcessor:
         self.total_images_with_human += images_with_humans
 
         human_percentage = (images_with_humans / total_images * 100) if total_images > 0 else 0
-        print(image_urls)
         result = f"Images: {total_images}, Images with humans: {images_with_humans} ({human_percentage:.2f}%)"
         return result

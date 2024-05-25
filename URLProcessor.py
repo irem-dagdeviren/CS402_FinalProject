@@ -20,6 +20,7 @@ class URLProcessor:
             hasFacebook = False
             hasTwitter = False
             hasTripAdvisor = False
+            hasMap = False
             for a_tag in soup.find_all('a', href=True):
                 absolute_url = urljoin(url, a_tag['href'])
                 normalized_url = self.normalize_url(absolute_url)
@@ -32,9 +33,11 @@ class URLProcessor:
                     hasTwitter = True 
                 if('tripadvisor' in normalized_url.lower() ):
                     hasTripAdvisor = True
+                if ('maps' in normalized_url.lower()):
+                    hasMap = True
                 links.add(normalized_url)
 
-            return links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor
+            return links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap
         except requests.exceptions.RequestException as e:
             print(f"Error fetching {url}: {e}")
             return set()

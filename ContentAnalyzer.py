@@ -18,7 +18,7 @@ class ContentAnalyzer:
         self.rdf_processor = RDFProcessor(rdf_file)
         self.url_processor = URLProcessor()
         self.grading_processor = GradingProcessor()
-        #self.image_processor = ImageProcessor()
+        self.image_processor = ImageProcessor()
         self.all_unique = set()
         self.leaf_classes = {}
         self.instancesdict = {}
@@ -28,12 +28,13 @@ class ContentAnalyzer:
         self.facebook = False
         self.twitter = False
         self.tripAdvisor = False
+        self.googlemaps = False
         
 
     def process_urls(self):
-        urls, self.instagram, self.facebook, self.twitter, self.tripAdvisor= self.url_processor.get_all_links(self.input_url)
+        urls, self.instagram, self.facebook, self.twitter, self.tripAdvisor, self.googlemaps= self.url_processor.get_all_links(self.input_url)
         for url in urls:
-            # print(self.image_processor.find_humans(url))
+            print(self.image_processor.find_humans(url))
             # print(self.image_processor.total_numbers())
             self.url_processor.find_components(url, self.all_unique)
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
@@ -112,7 +113,14 @@ class ContentAnalyzer:
                         category_map[item] = 1 if self.twitter else 0
                     elif item == "TripAdvisor":
                         category_map[item] = 1 if self.tripAdvisor else 0
-                        
+                    elif item == "ExperientialPhotos":
+                        # number of experiential photos can be change accordingly
+                        category_map[item] = 1 if self.image_processor.total_images_with_human > 10 else 0
+                    elif item == "Photos":
+                        category_map[item] = 1 if self.image_processor.total_images > 0 else 0
+                    elif item == "MapInformation":
+                        category_map[item] = 1 if self.googlemaps else 0
+
                     else:
                         item_synonyms = self.instancesdict.get(item, [item])
                         present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
@@ -156,6 +164,11 @@ class ContentAnalyzer:
         new_row_df = pd.DataFrame([flattened_data])
 
         # Append the new row to the existing DataFrame
+        # will be check the error
+        ''' 
+        FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. 
+        In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. 
+        To retain the old behavior, exclude the relevant entries before the concat operation.'''
         updated_df = pd.concat([existing_df, new_row_df], ignore_index=True)
 
         # Save the updated DataFrame back to the Excel file
@@ -165,7 +178,7 @@ class ContentAnalyzer:
 
         results = {
             "urls_processed": urls_processed,
-            #"total_scanned,_images": self.image_processor.total_numbers(),
+            "total_scanned,_images": self.image_processor.total_numbers(),
             "url" : self.input_url,
             "unique_contents_count": unique_contents_count,
             "result_hashmaps": self.result_hashmaps,
