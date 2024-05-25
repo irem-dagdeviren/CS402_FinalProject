@@ -24,15 +24,21 @@ class ContentAnalyzer:
         self.instancesdict = {}
         self.result_hashmaps = {}
         self.total_grades_sum = 0
+        self.instagram = False
+        self.facebook = False
+        self.twitter = False
+        self.tripAdvisor = False
+        
 
     def process_urls(self):
-        urls = self.url_processor.get_all_links(self.input_url)
+        urls, self.instagram, self.facebook, self.twitter, self.tripAdvisor= self.url_processor.get_all_links(self.input_url)
         for url in urls:
             # print(self.image_processor.find_humans(url))
             # print(self.image_processor.total_numbers())
             self.url_processor.find_components(url, self.all_unique)
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
         return len(urls), len(self.all_unique), df
+    
     def is_valid_turkish_phone_number(self, text_list):
         # Regex pattern to strictly match Turkish phone numbers
         pattern = r"""
@@ -76,7 +82,7 @@ class ContentAnalyzer:
         mnb = self.text_processor.multinomial_nb(df, X)
         labels_found = self.text_processor.predicting_new_labels(df_unique, cv, mnb)
         return labels_found
-
+        
     def process_grades(self, labels_found):
         grades = self.grading_processor.read_grades(self.grades_file)
     
@@ -92,7 +98,21 @@ class ContentAnalyzer:
                         category_map[item] = 1 if np.isin(3, labels_found) else 0
                     elif item == "Phone":
                         present = self.is_valid_turkish_phone_number(self.all_unique)
+                        if(not present):
+                            present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
                         category_map[item] = 1 if present else 0
+                    elif item == 'WebsiteSecurity':
+                        isSecure = self.input_url.lower().startswith("https:")
+                        category_map[item] = 1 if isSecure else 0
+                    elif item == "Instagram":
+                        category_map[item] = 1 if self.instagram else 0
+                    elif item == "Facebook":
+                        category_map[item] = 1 if self.facebook else 0
+                    elif item == "Twitter":
+                        category_map[item] = 1 if self.twitter else 0
+                    elif item == "TripAdvisor":
+                        category_map[item] = 1 if self.tripAdvisor else 0
+                        
                     else:
                         item_synonyms = self.instancesdict.get(item, [item])
                         present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
@@ -115,9 +135,33 @@ class ContentAnalyzer:
         urls_processed, unique_contents_count, component_df = self.process_urls()
         self.process_rdf()
         labels_found = self.process_texts(component_df)
-        print(self.all_unique)
         self.process_grades(labels_found)
         print(self.result_hashmaps)
+        print(labels_found)
+        print(self.all_unique)
+    
+# Load the provided Excel file
+        file_path = 'hashmap_results.xlsx'
+        existing_df = pd.read_excel(file_path)
+
+        # Define the hashmap data
+        data = self.result_hashmaps
+
+        # Flatten the hashmap data into a single row
+        flattened_data = {'URL': self.input_url}
+        flattened_data.update({key2: value2 for key1, subdict in data.items() for key2, value2 in subdict.items()})
+   
+
+        # Create a DataFrame from the flattened data
+        new_row_df = pd.DataFrame([flattened_data])
+
+        # Append the new row to the existing DataFrame
+        updated_df = pd.concat([existing_df, new_row_df], ignore_index=True)
+
+        # Save the updated DataFrame back to the Excel file
+        updated_df.to_excel(file_path, index=False)
+
+
 
         results = {
             "urls_processed": urls_processed,

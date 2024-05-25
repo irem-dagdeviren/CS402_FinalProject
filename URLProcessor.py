@@ -16,13 +16,25 @@ class URLProcessor:
             response.raise_for_status()
             soup = BeautifulSoup(response.text, 'html.parser')
             links = set()
-
+            hasInstagram = False
+            hasFacebook = False
+            hasTwitter = False
+            hasTripAdvisor = False
             for a_tag in soup.find_all('a', href=True):
                 absolute_url = urljoin(url, a_tag['href'])
-                normalized_url = self.normalize_url(absolute_url)
+                normalized_url = absolute_url #self.normalize_url(absolute_url)
+                print(normalized_url)
+                if('instagram' in normalized_url.lower() ):
+                    hasInstagram = True
+                if('facebook' in normalized_url.lower() ):
+                    hasFacebook = True
+                if('twitter' in normalized_url.lower() ):
+                    hasTwitter = True 
+                if('tripadvisor' in normalized_url.lower() ):
+                    hasTripAdvisor = True
                 links.add(normalized_url)
 
-            return links
+            return links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor
         except requests.exceptions.RequestException as e:
             print(f"Error fetching {url}: {e}")
             return set()
@@ -34,6 +46,9 @@ class URLProcessor:
             soup = BeautifulSoup(response.text, 'html.parser')
             all_divs = soup.find_all('div')
             unique_contents = set()
+            
+            
+            soup.find(lambda tag: 'slider' in str(tag).lower())
 
             def find_most_inner_content(element):
                 inner_divs = element.find_all('div')
@@ -50,4 +65,3 @@ class URLProcessor:
 
         except requests.exceptions.RequestException as e:
             print(f"Error fetching {url}: {e}")
-
