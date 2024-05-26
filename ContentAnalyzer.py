@@ -18,7 +18,7 @@ class ContentAnalyzer:
         self.rdf_processor = RDFProcessor(rdf_file)
         self.url_processor = URLProcessor()
         self.grading_processor = GradingProcessor()
-        #self.image_processor = ImageProcessor()
+        self.image_processor = ImageProcessor()
         self.all_unique = set()
         self.leaf_classes = {}
         self.instancesdict = {}
@@ -38,7 +38,7 @@ class ContentAnalyzer:
 
         for url in urls:
             print("Current url: ", url)
-            #print(self.image_processor.find_humans(url))
+            print(self.image_processor.find_humans(url))
             # print(self.image_processor.total_numbers())
 
             self.url_processor.find_components(url, self.all_unique)
@@ -212,7 +212,7 @@ class ContentAnalyzer:
 
         results = {
             "urls_processed": urls_processed,
-            #"total_scanned,_images": self.image_processor.total_numbers(),
+            "total_scanned,_images": self.image_processor.total_numbers(),
             "url" : self.input_url,
             "unique_contents_count": unique_contents_count,
             "result_hashmaps": self.result_hashmaps,

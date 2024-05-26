@@ -55,7 +55,7 @@ class ImageProcessor:
 
             for a in soup.find_all("a", href=True):
                 a_url = a.attrs.get("href")
-                if a_url.lower().endswith((".jpg", ".jpeg", ".png", ".gif")) and self.is_duplicate_url(a_url):
+                if a_url.lower().endswith((".jpg", ".jpeg", ".png" , ".gif", ".JPG")) and self.is_duplicate_url(a_url):
                     a_url = urljoin(url, a_url)
                     urls.append(a_url)
         except Exception as a:
