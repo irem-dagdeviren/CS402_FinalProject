@@ -59,14 +59,14 @@ class URLProcessor:
             self.languages.add(language)
             all_divs = soup.find_all('div')
             unique_contents = set()
+            if not self.slider:
+                    self.slider = self.detect_web_slider_elements(soup)
+            if not self.datepicker:
+                self.datepicker = self.detect_web_calendar_elements(soup)
+            if not self.searchbar:
+                self.searchbar = self.detect_web_searchbar_elements(soup)
 
             def find_most_inner_content(element):
-                if not self.slider:
-                    self.slider = self.detect_web_slider_elements(soup)
-                if not self.datepicker:
-                    self.datepicker = self.detect_web_calendar_elements(soup)
-                if not self.searchbar:
-                    self.searchbar = self.detect_web_searchbar_elements(soup)
                 inner_divs = element.find_all('div')
                 if not inner_divs:
                     return element.get_text(strip=True)
@@ -115,7 +115,6 @@ class URLProcessor:
                 if soup.find(lambda tag: keyword in str(tag).lower()):
                     self.datepicker = True
                     break
-            print(self.datepicker)
         except Exception as e:
             print(f"Error detecting datepicker: {e}")
         return self.datepicker
@@ -126,7 +125,6 @@ class URLProcessor:
         try:
             if soup.find(lambda tag: 'slider' in str(tag).lower()):
                 self.slider = True
-            print(self.slider)
         except Exception as e:
             print(f"Error detecting slider: {e}")
         return self.slider
@@ -140,7 +138,6 @@ class URLProcessor:
                 if soup.find(lambda tag: keyword in str(tag).lower()):
                     self.searchbar = True
                     break
-            print(self.searchbar)
         except Exception as e:
             print(f"Error detecting search bar: {e}")
         return self.searchbar
