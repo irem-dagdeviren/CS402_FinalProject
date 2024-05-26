@@ -1,24 +1,5 @@
 $(document).ready(function(){
 	"use strict";
-    
-        /*==================================
-* Author        : "ThemeSine"
-* Template Name : Listrace directory HTML Template
-* Version       : 1.0
-==================================== */
-
-
-
-
-/*=========== TABLE OF CONTENTS ===========
-1. Scroll To Top 
-2. slick carousel
-3. welcome animation support
-4. feather icon
-5. counter
-======================================*/
-
-    // 1. Scroll To Top 
 		$(window).on('scroll',function () {
 			if ($(this).scrollTop() > 600) {
 				$('.return-to-top').fadeIn();
@@ -33,8 +14,6 @@ $(document).ready(function(){
 			return false;
 		});
 	
-	
-	// 2. slick carousel
 
 	$(".testimonial-carousel").slick({
 		infinite: true,
