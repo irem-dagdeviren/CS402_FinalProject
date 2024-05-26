@@ -115,8 +115,10 @@ class URLProcessor:
                 if soup.find(lambda tag: keyword in str(tag).lower()):
                     self.datepicker = True
                     break
+            print(self.datepicker)
         except Exception as e:
             print(f"Error detecting datepicker: {e}")
+        return self.datepicker
 
     def detect_web_slider_elements(self, soup):
         if self.slider:
@@ -124,9 +126,10 @@ class URLProcessor:
         try:
             if soup.find(lambda tag: 'slider' in str(tag).lower()):
                 self.slider = True
+            print(self.slider)
         except Exception as e:
             print(f"Error detecting slider: {e}")
-
+        return self.slider
     
     def detect_web_searchbar_elements(self, soup):
         if self.searchbar:
@@ -137,5 +140,7 @@ class URLProcessor:
                 if soup.find(lambda tag: keyword in str(tag).lower()):
                     self.searchbar = True
                     break
+            print(self.searchbar)
         except Exception as e:
             print(f"Error detecting search bar: {e}")
+        return self.searchbar
