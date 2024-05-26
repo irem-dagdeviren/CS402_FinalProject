@@ -18,7 +18,7 @@ class ContentAnalyzer:
         self.rdf_processor = RDFProcessor(rdf_file)
         self.url_processor = URLProcessor()
         self.grading_processor = GradingProcessor()
-        self.image_processor = ImageProcessor()
+        #self.image_processor = ImageProcessor()
         self.all_unique = set()
         self.leaf_classes = {}
         self.instancesdict = {}
@@ -29,15 +29,16 @@ class ContentAnalyzer:
         self.twitter = False
         self.tripAdvisor = False
         self.googlemaps = False
+
         
 
     def process_urls(self):
         urls, self.instagram, self.facebook, self.twitter, self.tripAdvisor, self.googlemaps= self.url_processor.get_all_links(self.input_url)
-        print(urls)
+        
 
         for url in urls:
             print("Current url: ", url)
-            print(self.image_processor.find_humans(url))
+            #print(self.image_processor.find_humans(url))
             # print(self.image_processor.total_numbers())
 
             self.url_processor.find_components(url, self.all_unique)
@@ -145,6 +146,16 @@ class ContentAnalyzer:
                             category_map[item] = 1 if 'ru' in self.url_processor.languages else 0
                         elif item == 'عربي':
                             category_map[item] = 1 if 'ar' in self.url_processor.languages else 0
+                    elif category == 'UserInterface':
+                        if item == 'Calendar':
+                            category_map[item] = 1 if self.url_processor.datepicker else 0
+                        elif item == 'Searchbar':
+                            category_map[item] = 1 if self.url_processor.searchbar else 0
+                        elif item == 'Slider':
+                            category_map[item] = 1 if self.url_processor.slider  else 0
+                        else:
+                            present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
+                            category_map[item] = 1 if present else 0
                     else:
                         present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
                         category_map[item] = 1 if present else 0
@@ -162,6 +173,7 @@ class ContentAnalyzer:
             ref.push(results)
         except Exception as e:
                 print(f"{e}")
+                
     def run(self):
         urls_processed, unique_contents_count, component_df = self.process_urls()
         self.process_rdf()
@@ -169,7 +181,6 @@ class ContentAnalyzer:
         self.process_grades(labels_found)
         print(self.result_hashmaps)
         print(labels_found)
-        print(self.all_unique)
     
         # Load the provided Excel file
         file_path = 'hashmap_results.xlsx'
@@ -201,7 +212,7 @@ class ContentAnalyzer:
 
         results = {
             "urls_processed": urls_processed,
-            "total_scanned,_images": self.image_processor.total_numbers(),
+            #"total_scanned,_images": self.image_processor.total_numbers(),
             "url" : self.input_url,
             "unique_contents_count": unique_contents_count,
             "result_hashmaps": self.result_hashmaps,

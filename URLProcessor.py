@@ -1,12 +1,14 @@
-import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin, urlparse, urlunparse
-
+import requests
 from langdetect import detect, LangDetectException
+from urllib.parse import urljoin, urlparse, urlunparse
 
 class URLProcessor:
     def __init__(self):
         self.languages = set()
+        self.slider = False
+        self.datepicker = False
+        self.searchbar = False
 
     def normalize_url(self, url):
         parsed_url = urlparse(url)
@@ -26,7 +28,7 @@ class URLProcessor:
             hasTwitter = False
             hasTripAdvisor = False
             hasMap = False
-
+            
             for a_tag in soup.find_all('a', href=True):
                 absolute_url = urljoin(url, a_tag['href'])
                 normalized_url = self.normalize_url(absolute_url)
@@ -39,7 +41,7 @@ class URLProcessor:
                     hasTwitter = True
                 if 'tripadvisor' in normalized_url.lower():
                     hasTripAdvisor = True
-                if ('maps' in normalized_url.lower()):
+                if 'maps' in normalized_url.lower():
                     hasMap = True
                 links.add(normalized_url)
 
@@ -57,23 +59,28 @@ class URLProcessor:
             self.languages.add(language)
             all_divs = soup.find_all('div')
             unique_contents = set()
-            print(language)
 
             def find_most_inner_content(element):
+                if not self.slider:
+                    self.slider = self.detect_web_slider_elements(soup)
+                if not self.datepicker:
+                    self.datepicker = self.detect_web_calendar_elements(soup)
+                if not self.searchbar:
+                    self.searchbar = self.detect_web_searchbar_elements(soup)
                 inner_divs = element.find_all('div')
                 if not inner_divs:
                     return element.get_text(strip=True)
                 else:
                     return find_most_inner_content(inner_divs[-1])
-
             for div in all_divs:
                 most_inner_content = find_most_inner_content(div).lower()
                 unique_contents.add(most_inner_content)
 
             all_unique.update(unique_contents)
-
+    
         except requests.exceptions.RequestException as e:
             print(f"Error fetching {url}: {e}")
+            return False, False, False, False
 
     def detect_language(self, soup):
         # Check for <html lang="..."> attribute
@@ -96,16 +103,39 @@ class URLProcessor:
                 return lang_code
         except LangDetectException:
             pass
-
+            print(f"{LangDetectException}")
         return 'Unknown'
+    
+    def detect_web_calendar_elements(self, soup):
+        if self.datepicker:
+            return self.datepicker  # Already found
+        try:
+            datepicker_keywords = ['datepicker', 'date-picker', 'calendar']
+            for keyword in datepicker_keywords:
+                if soup.find(lambda tag: keyword in str(tag).lower()):
+                    self.datepicker = True
+                    break
+        except Exception as e:
+            print(f"Error detecting datepicker: {e}")
 
-# Usage example
-processor = URLProcessor()
-links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap = processor.get_all_links('https://example.com')
-print(f"Links: {links}")
-print(f"Has Instagram: {hasInstagram}")
-print(f"Has Facebook: {hasFacebook}")
-print(f"Has Twitter: {hasTwitter}")
-print(f"Has TripAdvisor: {hasTripAdvisor}")
-print(f"Has Maps: {hasMap}")
-print(f"Languages: {processor.languages}")
+    def detect_web_slider_elements(self, soup):
+        if self.slider:
+            return self.slider  # Already found
+        try:
+            if soup.find(lambda tag: 'slider' in str(tag).lower()):
+                self.slider = True
+        except Exception as e:
+            print(f"Error detecting slider: {e}")
+
+    
+    def detect_web_searchbar_elements(self, soup):
+        if self.searchbar:
+            return self.searchbar  # Already found
+        try:
+            searchbar_keywords = ['searchbar', 'search-bar']
+            for keyword in searchbar_keywords:
+                if soup.find(lambda tag: keyword in str(tag).lower()):
+                    self.searchbar = True
+                    break
+        except Exception as e:
+            print(f"Error detecting search bar: {e}")
