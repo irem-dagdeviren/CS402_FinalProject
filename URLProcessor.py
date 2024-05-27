@@ -75,7 +75,16 @@ class URLProcessor:
             for div in all_divs:
                 most_inner_content = find_most_inner_content(div).lower()
                 unique_contents.add(most_inner_content)
+                
+                
+            all_labels = soup.find_all('label')
+            label_texts = [label.get_text(strip=True) for label in all_labels]
 
+            # Print found labels
+            for label_text in label_texts:
+                print(f"Found label: {label_text}")
+                unique_contents.add(label_text)
+                
             all_unique.update(unique_contents)
     
         except requests.exceptions.RequestException as e:
