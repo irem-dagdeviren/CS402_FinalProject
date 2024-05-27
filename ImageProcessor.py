@@ -63,7 +63,6 @@ class ImageProcessor:
         return list(set(urls))
 
     def is_duplicate_url(self, url):
-        """Check if the URL is a duplicate before fetching images."""
         if url in self.processed_urls:
             return False
         else:
@@ -91,7 +90,7 @@ class ImageProcessor:
             try:
                 predictions, _ = self.load_and_predict_image(img_url)
                 human_counts = sum(1 for i in range(len(predictions[0]['labels'])) if
-                                   predictions[0]['labels'][i] == 1 and predictions[0]['scores'][i] >= 0.8)
+                                   predictions[0]['labels'][i] == 1 and predictions[0]['scores'][i] >= 0.95)
                 if human_counts > 0:
                     print(img_url)
                     images_with_humans += 1

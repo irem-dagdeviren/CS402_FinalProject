@@ -38,8 +38,8 @@ class ContentAnalyzer:
 
         for url in urls:
             print("Current url: ", url)
-            print(self.image_processor.find_humans(url))
-            # print(self.image_processor.total_numbers())
+            if self.image_processor.total_images_with_human < 10:
+                print(self.image_processor.find_humans(url))
 
             self.url_processor.find_components(url, self.all_unique)
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
@@ -177,10 +177,19 @@ class ContentAnalyzer:
     def run(self):
         urls_processed, unique_contents_count, component_df = self.process_urls()
         self.process_rdf()
-        labels_found = self.process_texts(component_df)
-        self.process_grades(labels_found)
+        # labels_found = self.process_texts(component_df)
+
+        processor = TextProcessor()
+        # df = processor.read_data('all-texts2.xlsx')  # Adjust path as per your project structure
+        # processor.train_and_save_model(df)
+
+        # Load the model and predict new data
+        # new_df = pd.read_csv('new_data.csv')  # Adjust path as per your project structure
+        labels, probabilities = processor.load_and_predict(component_df)
+
+        self.process_grades(labels)
         print(self.result_hashmaps)
-        print(labels_found)
+        # print(labels_found)
     
         # Load the provided Excel file
         file_path = 'hashmap_results.xlsx'

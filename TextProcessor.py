@@ -1,11 +1,15 @@
+import os
 import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import confusion_matrix, accuracy_score
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import re
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+from sklearn.base import BaseEstimator, TransformerMixin
+import joblib
 
 class TextProcessor:
     def read_data(self, file_name):
@@ -17,39 +21,62 @@ class TextProcessor:
         df.drop("index", axis=1, inplace=True)
         return df
 
-    def porter(self, df):
-        df['text'] = df['text'].astype(str)
-        porter = PorterStemmer()
-        corpus = []
-        for i in range(0, len(df)):
-            review = re.sub('[^a-zA-Z]', ' ', df['text'][i])
+    class StemmedCountVectorizer(BaseEstimator, TransformerMixin):
+        def __init__(self):
+            self.porter = PorterStemmer()
+            self.vectorizer = CountVectorizer(max_features=4000, ngram_range=(1, 4))
+
+        def _preprocess(self, text):
+            review = re.sub('[^a-zA-Z]', ' ', text)
             review = review.lower()
             review = review.split()
-            review = [porter.stem(word) for word in review if not word in stopwords.words("english")]
-            review = " ".join(review)
-            corpus.append(review)
-        return corpus
+            review = [self.porter.stem(word) for word in review if word not in stopwords.words("english")]
+            return " ".join(review)
 
-    def count_vectorizer(self, corpus):
-        cv = CountVectorizer(max_features=4000, ngram_range=(1, 4))
-        X = cv.fit_transform(corpus).toarray()
-        cv.get_feature_names_out()[:20]
-        return X, cv
+        def fit(self, X, y=None):
+            corpus = [self._preprocess(text) for text in X]
+            self.vectorizer.fit(corpus)
+            return self
 
-    def multinomial_nb(self, df, X):
+        def transform(self, X):
+            corpus = [self._preprocess(text) for text in X]
+            return self.vectorizer.transform(corpus)
+
+    def train_and_save_model(self, df):
         y = df["label"]
+        X = df["text"]
+
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
-        mnb = MultinomialNB()
-        mnb.fit(X_train, y_train)
-        y_pred = mnb.predict(X_test)
-        print("Naive Bayes accuracy is ", round(accuracy_score(y_test, y_pred), 2) * 100, "%")
 
-        return mnb
+        pipeline = Pipeline([
+            ('stemmed_vect', self.StemmedCountVectorizer()),
+            ('clf', MultinomialNB())
+        ])
 
-    def predicting_new_labels(self, df, cv, mnb):
+        pipeline.fit(X_train, y_train)
 
-        df.dropna(inplace=True)
-        new = cv.transform(df["Unique Content"]).toarray()
-        new_labels = mnb.predict(new)
-        return new_labels
-    
+        y_pred = pipeline.predict(X_test)
+        cm = confusion_matrix(y_test, y_pred)
+        print("Naive Bayes accuracy is ", round(accuracy_score(y_test, y_pred) * 100, 2), "%")
+        print("\n")
+        print("Confusion matrix for Naive Bayes ")
+        print(cm)
+
+        # Save the pipeline to a file in the project directory
+        save_path = 'text_classification_pipeline.joblib'  # Relative path within the project directory
+        joblib.dump(pipeline, save_path)
+        print(f"Pipeline saved successfully at {save_path}")
+
+    def load_and_predict(self, new_df):
+        # Load the saved pipeline from the project directory
+        load_path = 'text_classification_pipeline.joblib'  # Relative path within the project directory
+        pipeline = joblib.load(load_path)
+        print(f"Pipeline loaded successfully from {load_path}")
+
+        new_df.dropna(inplace=True)
+        new = new_df["Unique Content"]
+
+        new_labels = pipeline.predict(new)
+        new_prob = pipeline.predict_proba(new)
+
+        return new_labels, new_prob
