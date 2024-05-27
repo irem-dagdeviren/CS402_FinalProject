@@ -34,7 +34,6 @@ class ContentAnalyzer:
 
     def process_urls(self):
         urls, self.instagram, self.facebook, self.twitter, self.tripAdvisor, self.googlemaps= self.url_processor.get_all_links(self.input_url)
-        
 
         for url in urls:
             print("Current url: ", url)
@@ -44,17 +43,28 @@ class ContentAnalyzer:
             self.url_processor.find_components(url, self.all_unique)
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
         return len(urls), len(self.all_unique), df
-    
+
     def is_valid_turkish_phone_number(self, text_list):
         # Regex pattern to strictly match Turkish phone numbers
         pattern = r"""
-            (?:\+?90|-?90|\(90\))     # Match international prefix +90, 90, (90) or start with 0, with optional spaces or dashes
-            (?:\s*\(?\d{3}\)?\s*-?)?    # Optional area code (3 digits) with optional parentheses and dash, possibly with spaces
-            \s*\d{3}\s*-?\s*\d{4}       # Three digits followed by optional space or dash, then four digits
+            ^                                           # Start of string
+            (?:\+?90|-?90|\(90\)|0)                     # Match international prefix +90, 90, (90) or start with 0, with optional spaces or dashes
+            \s*                                         # Optional whitespace
+            \(?0?\d{3}\)?                               # Area code (3 digits) with optional leading zero and optional parentheses
+            \s*-?\s*                                    # Optional whitespace and dash
+            \d{3}                                       # First 3 digits of local number
+            \s*-?\s*                                    # Optional whitespace and dash
+            \d{2}                                       # Next 2 digits
+            \s*-?\s*                                    # Optional whitespace and dash
+            \d{2}                                       # Last 2 digits
+            $                                           # End of string
         """
+
+        # Iterate through each text in the list
         for text in text_list:
+            digits_only = re.sub(r'[^\d]', '', text)  # Remove all non-digits
             # Use findall to search for matches within the string
-            if re.findall(pattern, text, re.VERBOSE):
+            if re.findall(pattern, digits_only, re.VERBOSE):
                 return True
         return False
     def process_rdf(self):
