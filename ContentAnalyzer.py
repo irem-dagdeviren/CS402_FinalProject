@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 from firebase_admin import db  # Import Firebase Admin database
 import re
+from urllib.parse import urlparse, urlunparse
 
 
 class ContentAnalyzer:
@@ -37,9 +38,10 @@ class ContentAnalyzer:
 
         for url in urls:
 
-            print("This is : self normalazed url", self.url_processor.normalize_url(self.input_url))
-            print("This is : url", url)
-            if self.image_processor.total_images_with_human < 10 and url.startswith(self.url_processor.normalize_url(self.input_url)):
+            parsed_url = urlparse(self.input_url)
+            base_url = urlunparse((parsed_url.scheme, parsed_url.netloc, '/', '', '', ''))
+
+            if self.image_processor.total_images_with_human < 10 and url.startswith(self.url_processor.normalize_url(base_url)):
                 print(self.image_processor.find_humans(url))
 
 
