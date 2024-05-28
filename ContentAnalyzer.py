@@ -45,8 +45,9 @@ class ContentAnalyzer:
             if self.image_processor.total_images_with_human < 10 and url.startswith(self.url_processor.normalize_url(base_url)):
                 print(self.image_processor.find_humans(url))
 
-
-            self.url_processor.find_components(url, self.all_unique)
+            if (url.startswith(self.url_processor.normalize_url(base_url)) or ('book' in  url) or ('rezerv' in url)):
+                print(url)
+                self.url_processor.find_components(url, self.all_unique)
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
         return len(urls), len(self.all_unique), df
 
@@ -198,47 +199,21 @@ class ContentAnalyzer:
     def run(self):
         urls_processed, unique_contents_count, component_df = self.process_urls()
         self.process_rdf()
-        # labels_found = self.process_texts(component_df)
 
         processor = TextProcessor()
-        # df = processor.read_data('all-texts2.xlsx')  # Adjust path as per your project structure
-        # processor.train_and_save_model(df)
-
-        # Load the model and predict new data
-        # new_df = pd.read_csv('new_data.csv')  # Adjust path as per your project structure
         labels, probabilities = processor.load_and_predict(component_df)
-
         self.process_grades(labels)
+        
         print(self.result_hashmaps)
-        # print(labels_found)
-    
-        # Load the provided Excel file
         file_path = 'hashmap_results.xlsx'
         existing_df = pd.read_excel(file_path)
-
-        # Define the hashmap data
         data = self.result_hashmaps
-
-        # Flatten the hashmap data into a single row
         flattened_data = {'URL': self.input_url}
         flattened_data.update({key2: value2 for key1, subdict in data.items() for key2, value2 in subdict.items()})
-   
-
-        # Create a DataFrame from the flattened data
         new_row_df = pd.DataFrame([flattened_data])
-
-        # Append the new row to the existing DataFrame
-        # will be check the error
-        ''' 
-        FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. 
-        In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. 
-        To retain the old behavior, exclude the relevant entries before the concat operation.'''
         updated_df = pd.concat([existing_df, new_row_df], ignore_index=True)
 
-        # Save the updated DataFrame back to the Excel file
         updated_df.to_excel(file_path, index=False)
-
-
 
         results = {
             "urls_processed": urls_processed,
