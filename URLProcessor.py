@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 from langdetect import detect, LangDetectException
 from urllib.parse import urljoin, urlparse, urlunparse
-
+import re
 class URLProcessor:
     def __init__(self):
         self.languages = set()
@@ -162,10 +162,13 @@ class URLProcessor:
         if self.slider:
             return self.slider  # Already found
         try:
-            if soup.find(lambda tag: 'slider' in str(tag).lower()):
-                self.slider = True
+            slider_keywords = ['slider', 'slick', 'slide']
+            for keyword in slice:
+                if soup.find(lambda tag: keyword in str(tag).lower()):
+                    self.searchbar = True
+                    break
         except Exception as e:
-            print(f"Error detecting slider: {e}")
+            print(f"Error detecting slider : {e}")
         return self.slider
     
     def detect_web_searchbar_elements(self, soup):
