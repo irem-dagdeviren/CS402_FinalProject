@@ -95,7 +95,6 @@ class ImageProcessor:
         for img_url in image_urls:
             # Check if the image URL ends with '.svg'
             if img_url.endswith('.svg'):
-
                 print(flag_detection(img_url))
 
             else:

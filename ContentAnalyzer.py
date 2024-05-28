@@ -47,7 +47,7 @@ class ContentAnalyzer:
                 print(self.image_processor.find_humans(url))
 
             if (url.startswith(self.url_processor.normalize_url(base_url)) or ('book' in  url) or ('rezerv' in url) or ('direct' in url)):
-                print(url)
+                # print(url)
                 self.url_processor.find_components(url, self.all_unique)
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
         return len(urls), len(self.all_unique), df
@@ -142,11 +142,11 @@ class ContentAnalyzer:
                         else:
                             present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
                             category_map[item] = 1 if present else 0
-                    # elif item == "ExperientialPhotos":
-                    #     # number of experiential photos can be change accordingly
-                    #     category_map[item] = 1 if self.image_processor.total_images_with_human > 5 else 0
-                    # elif item == "Photos":
-                    #     category_map[item] = 1 if self.image_processor.total_images > 0 else 0
+                    elif item == "ExperientialPhotos":
+                    # number of experiential photos can be change accordingly
+                         category_map[item] = 1 if self.image_processor.total_images_with_human > 5 else 0
+                    elif item == "Photos":
+                         category_map[item] = 1 if self.image_processor.total_images > 0 else 0
                     elif item == "MapInformation":
                         if self.googlemaps:
                             category_map[item] = 1
@@ -154,7 +154,7 @@ class ContentAnalyzer:
                             present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
                             category_map[item] = 1 if present else 0
                     elif category == 'Language': 
-                        print(self.url_processor.languages)   
+                        # print(self.url_processor.languages)
                         if item == 'English':
                             category_map[item] = 1 if 'en' in self.url_processor.languages else 0
                         elif item == 'Türkçe':
@@ -210,7 +210,7 @@ class ContentAnalyzer:
         processor = TextProcessor()
         labels, probabilities = processor.load_and_predict(component_df)
         self.process_grades(labels)
-        print(self.result_hashmaps)
+        # print(self.result_hashmaps)
         file_path = 'hashmap_results.xlsx'
         existing_df = pd.read_excel(file_path)
         data = self.result_hashmaps

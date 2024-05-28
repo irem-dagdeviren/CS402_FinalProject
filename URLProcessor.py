@@ -44,13 +44,13 @@ class URLProcessor:
                         links.add(url_script)
                     else:
                         links.add(requests.compat.urljoin( url,url_script))
-                    print(url_script)
+                    # print(url_script)
 
             # Extract URLs from inline scripts
             for script in soup.find_all('script'):
                 if script.string:          
                     links.update(re.findall(r'https?://\S+', script.string))
-                print(url_script)
+                # print(url_script)
 
 
             return links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail, hasWeather
@@ -115,7 +115,7 @@ class URLProcessor:
                 
             all_unique.update(unique_contents)
             
-            print(unique_contents)
+            # print(unique_contents)
     
         except requests.exceptions.RequestException as e:
             print(f"Error fetching {url}: {e}")
