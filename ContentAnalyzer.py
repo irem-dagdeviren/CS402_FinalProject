@@ -31,12 +31,13 @@ class ContentAnalyzer:
         self.tripAdvisor = False
         self.googlemaps = False
         self.mail = False
+        self.weather = False
 
         
     
 
     def process_urls(self):
-        urls, self.instagram, self.facebook, self.twitter, self.tripAdvisor, self.googlemaps, self.mail = self.url_processor.get_all_links(self.input_url)
+        urls, self.instagram, self.facebook, self.twitter, self.tripAdvisor, self.googlemaps, self.mail, self.weather = self.url_processor.get_all_links(self.input_url)
         for url in urls:
 
             parsed_url = urlparse(self.input_url)
@@ -45,7 +46,7 @@ class ContentAnalyzer:
             if self.image_processor.total_images_with_human < 10 and url.startswith(self.url_processor.normalize_url(base_url)):
                 print(self.image_processor.find_humans(url))
 
-            if (url.startswith(self.url_processor.normalize_url(base_url)) or ('book' in  url) or ('rezerv' in url)):
+            if (url.startswith(self.url_processor.normalize_url(base_url)) or ('book' in  url) or ('rezerv' in url) or ('direct' in url)):
                 print(url)
                 self.url_processor.find_components(url, self.all_unique)
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
@@ -178,6 +179,12 @@ class ContentAnalyzer:
                         else:
                             present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
                             category_map[item] = 1 if present else 0
+                    elif item == 'PrivacyPolicy':
+                        present = any('privacy policy' in string.lower() for string in self.all_unique)
+                        category_map[item] = 1 if present else 0
+                        category_map[item] = 1 if present else 0
+                    elif item  == 'Weather':
+                        category_map[item] = 1 if self.weather  else 0
                     else:
                         present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
                         category_map[item] = 1 if present else 0
@@ -203,7 +210,6 @@ class ContentAnalyzer:
         processor = TextProcessor()
         labels, probabilities = processor.load_and_predict(component_df)
         self.process_grades(labels)
-        
         print(self.result_hashmaps)
         file_path = 'hashmap_results.xlsx'
         existing_df = pd.read_excel(file_path)
