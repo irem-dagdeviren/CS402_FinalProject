@@ -1711,6 +1711,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#arriving -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#arriving">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Arrival"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#book-button -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#book-button">
@@ -1738,6 +1746,14 @@
     <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#booking -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#booking">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#booknow -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#booknow">
         <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton"/>
     </owl:NamedIndividual>
     
@@ -1982,6 +1998,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#datepicker">
         <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Calendar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#departing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#departing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3/Departure"/>
     </owl:NamedIndividual>
     
 
@@ -2763,6 +2787,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#specialoffer">
         <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Offers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#submit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#submit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton"/>
     </owl:NamedIndividual>
     
 
