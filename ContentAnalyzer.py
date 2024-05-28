@@ -29,12 +29,13 @@ class ContentAnalyzer:
         self.twitter = False
         self.tripAdvisor = False
         self.googlemaps = False
+        self.mail = False
 
         
+    
 
     def process_urls(self):
-        urls, self.instagram, self.facebook, self.twitter, self.tripAdvisor, self.googlemaps= self.url_processor.get_all_links(self.input_url)
-
+        urls, self.instagram, self.facebook, self.twitter, self.tripAdvisor, self.googlemaps, self.mail = self.url_processor.get_all_links(self.input_url)
         for url in urls:
 
             print("This is : self normalazed url", self.url_processor.normalize_url(self.input_url))
@@ -131,11 +132,17 @@ class ContentAnalyzer:
                         category_map[item] = 1 if self.twitter else 0
                     elif item == "TripAdvisor":
                         category_map[item] = 1 if self.tripAdvisor else 0
-                    elif item == "ExperientialPhotos":
-                        # number of experiential photos can be change accordingly
-                        category_map[item] = 1 if self.image_processor.total_images_with_human > 5 else 0
-                    elif item == "Photos":
-                        category_map[item] = 1 if self.image_processor.total_images > 0 else 0
+                    elif item == "Mail":
+                        if(self.mail):
+                            category_map[item] = 1
+                        else:
+                            present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
+                            category_map[item] = 1 if present else 0
+                    # elif item == "ExperientialPhotos":
+                    #     # number of experiential photos can be change accordingly
+                    #     category_map[item] = 1 if self.image_processor.total_images_with_human > 5 else 0
+                    # elif item == "Photos":
+                    #     category_map[item] = 1 if self.image_processor.total_images > 0 else 0
                     elif item == "MapInformation":
                         if self.googlemaps:
                             category_map[item] = 1

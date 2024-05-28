@@ -22,34 +22,65 @@ class URLProcessor:
             response = requests.get(url)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, 'html.parser')
-            links = set()
-            hasInstagram = False
-            hasFacebook = False
-            hasTwitter = False
-            hasTripAdvisor = False
-            hasMap = False
             
+            links = set()
+            hasInstagram = hasFacebook = hasTwitter = hasTripAdvisor = hasMap = hasMail = False
+            
+            # Extract URLs from 'a' tags
             for a_tag in soup.find_all('a', href=True):
-                absolute_url = urljoin(url, a_tag['href'])
+                absolute_url = urljoin(url, a_tag['href'].strip())
                 normalized_url = self.normalize_url(absolute_url)
-
-                if 'instagram' in normalized_url.lower():
-                    hasInstagram = True
-                if 'facebook' in normalized_url.lower():
-                    hasFacebook = True
-                if 'twitter' in normalized_url.lower():
-                    hasTwitter = True
-                if 'tripadvisor' in normalized_url.lower():
-                    hasTripAdvisor = True
-                if 'maps' in normalized_url.lower():
-                    hasMap = True
+                hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail = self.check_special_urls(
+                    normalized_url, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail
+                )
                 links.add(normalized_url)
 
-            return links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap
-        except Exception as e:
-            print(f"Error fetching {url}: {e}")
-            return set(), False, False, False, False, False
 
+
+            for script in soup.find_all('script', src=True):
+                    url_script = script['src'].strip()
+                    if(url_script.endswith('js')):
+                        continue
+                    hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail = self.check_special_urls(url_script, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail)
+                    if url_script.startswith('http'):
+                        links.add(url_script)
+                    else:
+                        links.add(requests.compat.urljoin( url,url_script))
+
+            # Extract URLs from inline scripts
+            for script in soup.find_all('script'):
+                if(url_script.endswith('js')):
+                        continue
+                if script.string:          
+                    links.update(re.findall(r'https?://\S+', script.string))
+
+
+            return links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap,hasMail
+
+        except requests.RequestException as e:
+            print(f"Request error fetching {url}: {e}")
+        except Exception as e:
+            print(f"Error processing {url}: {e}")
+
+        return set(), False, False, False, False, False
+        
+
+    def check_special_urls(self, url, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail):
+        """Check if the URL contains specific social media or map keywords."""
+        if 'instagram' in url.lower():
+            hasInstagram = True
+        if 'facebook' in url.lower():
+            hasFacebook = True
+        if 'twitter' in url.lower():
+            hasTwitter = True
+        if 'tripadvisor' in url.lower():
+            hasTripAdvisor = True
+        if 'maps' in url.lower():
+            hasMap = True
+        if 'mailto' in url.lower():
+            hasMail = True
+        return hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail
+    
     def find_components(self, url, all_unique):
         try:
             response = requests.get(url)
@@ -82,7 +113,6 @@ class URLProcessor:
 
             # Print found labels
             for label_text in label_texts:
-                print(f"Found label: {label_text}")
                 unique_contents.add(label_text)
                 
             all_unique.update(unique_contents)
