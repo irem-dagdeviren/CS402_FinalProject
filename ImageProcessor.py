@@ -9,6 +9,11 @@ from torchvision.models.detection.faster_rcnn import FasterRCNN_ResNet50_FPN_Wei
 from io import BytesIO
 import hashlib
 
+from PIL import Image
+from io import BytesIO
+
+from Flag_Detection import flag_detection
+
 
 class ImageProcessor:
     def __init__(self):
@@ -19,6 +24,7 @@ class ImageProcessor:
         self.processed_urls = set()
         self.total_images = 0
         self.total_images_with_human = 0
+
 
 
     def total_numbers(self):
@@ -80,22 +86,28 @@ class ImageProcessor:
 
         return predictions, image_tensor
 
-    def find_humans(self, url):
 
+    def find_humans(self, url):
         image_urls = self.fetch_images(url)
         total_images = len(image_urls)
         images_with_humans = 0
 
         for img_url in image_urls:
-            try:
-                predictions, _ = self.load_and_predict_image(img_url)
-                human_counts = sum(1 for i in range(len(predictions[0]['labels'])) if
-                                   predictions[0]['labels'][i] == 1 and predictions[0]['scores'][i] >= 0.95)
-                if human_counts > 0:
-                    print(img_url)
-                    images_with_humans += 1
-            except Exception as e:
-                print(f"Failed to process image {img_url}: {e}")
+            # Check if the image URL ends with '.svg'
+            if img_url.endswith('.svg'):
+
+                print(flag_detection(img_url))
+
+            else:
+                try:
+                    predictions, _ = self.load_and_predict_image(img_url)
+                    human_counts = sum(1 for i in range(len(predictions[0]['labels'])) if
+                                       predictions[0]['labels'][i] == 1 and predictions[0]['scores'][i] >= 0.95)
+                    if human_counts > 0:
+                        print(img_url)
+                        images_with_humans += 1
+                except Exception as e:
+                    print(f"Failed to process image {img_url}: {e}")
 
         self.total_images += total_images
         self.total_images_with_human += images_with_humans
