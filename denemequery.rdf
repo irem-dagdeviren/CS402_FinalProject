@@ -1719,6 +1719,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#availability -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#availability">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#BookButton"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#book-button -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#book-button">
@@ -1791,6 +1799,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#canadian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#canadian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CAD"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#canadian-dollar -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#canadian-dollar">
@@ -1851,6 +1867,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#capacity">
         <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Capacity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#chat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#chat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Chatbot"/>
     </owl:NamedIndividual>
     
 
@@ -2555,7 +2579,9 @@
 
     <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#privacy -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#privacy"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#privacy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#PrivacyPolicy"/>
+    </owl:NamedIndividual>
     
 
 
@@ -2611,6 +2637,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#question_form">
         <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#QuestionForm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#refundable -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#refundable">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#CancellationPolicy"/>
     </owl:NamedIndividual>
     
 
@@ -3007,6 +3041,30 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#ıtaliano">
         <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#Italiano"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#€ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#€">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#EUR"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#$ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#$">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#USD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#£ -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#£">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kronos/ontologies/2023/10/untitled-ontology-3#GBP"/>
     </owl:NamedIndividual>
     
 
