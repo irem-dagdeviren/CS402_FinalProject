@@ -75,16 +75,27 @@ class ImageProcessor:
             self.processed_urls.add(url)
             return True
 
-    def load_and_predict_image(self, url):
 
-        response = requests.get(url)
-        image = Image.open(BytesIO(response.content)).convert("RGB")
-        image_tensor = self.transform(image).to(self.device)
 
-        with torch.no_grad():
-            predictions = self.model([image_tensor])
+    def load_and_predict_image(self, img_url):
+        try:
+            response = requests.get(img_url)
+            image = Image.open(BytesIO(response.content)).convert("RGB")
+            image_tensor = self.transform(image).to(self.device)
 
-        return predictions, image_tensor
+            with torch.no_grad():
+                predictions = self.model([image_tensor])
+
+            return predictions, image_tensor
+
+        except requests.exceptions.RequestException as e:
+            print(f"Network-related error occurred: {e}")
+        except IOError as e:
+            print(f"Cannot identify image file: {e}")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+        return None
 
 
     def find_humans(self, url):
