@@ -9,6 +9,15 @@ class URLProcessor:
         self.slider = False
         self.datepicker = False
         self.searchbar = False
+        self.instagram = False
+        self.facebook = False
+        self.twitter = False
+        self.map = False
+        self.mail = False
+        self.tripadvisor = False
+        self.weather = False
+        self.whatsapp = False
+
 
     def normalize_url(self, url):
         parsed_url = urlparse(url)
@@ -24,23 +33,16 @@ class URLProcessor:
             soup = BeautifulSoup(response.text, 'html.parser')
 
             links = set()
-            hasInstagram = hasFacebook = hasTwitter = hasTripAdvisor = hasMap = hasMail = hasWeather = False
 
             # Extract URLs from 'a' tags
             for a_tag in soup.find_all('a', href=True):
                 absolute_url = urljoin(url, a_tag['href'])
                 normalized_url = self.normalize_url(absolute_url)
-                hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail, hasWeather = self.check_special_urls(
-                    normalized_url, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail, hasWeather
-                )
                 links.add(normalized_url)
 
             # Extract URLs from 'script' tags
             for script in soup.find_all('script', src=True):
                 url_script = script['src']
-                hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail, hasWeather = self.check_special_urls(
-                    url_script, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail, hasWeather
-                )
                 if url_script.startswith('http'):
                     links.add(url_script)
                 else:
@@ -51,12 +53,12 @@ class URLProcessor:
                 if script.string:
                     found_urls = re.findall(r'https://\S+', script.string)
                     for found_url in found_urls:
-                        hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail, hasWeather = self.check_special_urls(
-                            found_url, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail, hasWeather
-                        )
                         links.add(found_url)
-
-            return links, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail, hasWeather
+                        
+            for link in links:
+                self.check_special_urls(link)
+                print(link)
+            return links
 
         except requests.RequestException as e:
             print(f"Request error fetching {url}: {e}")
@@ -65,21 +67,49 @@ class URLProcessor:
 
         return set(), False, False, False, False, False, False, False
 
-    def check_special_urls(self, url, hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail, hasWeather):
+    def check_special_urls(self, url):
         """Check if the URL contains specific social media or map keywords."""
-        if 'instagram' in url.lower():
-            hasInstagram = True
-        if 'facebook' in url.lower():
-            hasFacebook = True
-        if 'twitter' in url.lower():
-            hasTwitter = True
-        if 'tripadvisor' in url.lower():
-            hasTripAdvisor = True
-        if 'maps' in url.lower():
-            hasMap = True
-        if 'forecast' in url.lower() or 'weather' in url.lower():
-            hasWeather = True
-        return hasInstagram, hasFacebook, hasTwitter, hasTripAdvisor, hasMap, hasMail, hasWeather
+        if self.instagram:
+            self.instagram = True
+        if not self.instagram:
+            if 'instagram' in url.lower():
+                self.instagram = True
+                
+        if self.whatsapp:
+            self.whatsapp = True
+        if not self.whatsapp:
+            if 'whatsapp' in url.lower():
+                self.whatsapp = True
+                
+        if self.facebook:
+            self.facebook = True
+        if not self.facebook:
+            if 'facebook' in url.lower():
+                self.facebook = True
+                
+        if self.twitter:
+            self.twitter = True
+        if not self.twitter:
+            if 'twitter' in url.lower():
+                self.twitter = True
+                
+        if self.tripadvisor:
+            self.tripadvisor = True
+        if not self.tripadvisor:
+            if 'tripadvisor' in url.lower():
+                self.tripadvisor = True
+                
+        if self.map:
+            self.map = True
+        if not self.map:
+            if 'map' in url.lower():
+                self.map = True
+                
+        if self.weather:
+            self.weather = True
+        if not self.weather:
+            if 'forecast' in url.lower() or 'weather' in url.lower():
+                self.weather = True       
 
     def find_components(self, url, all_unique):
         try:

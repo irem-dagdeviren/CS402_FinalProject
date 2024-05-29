@@ -663,8 +663,8 @@
                             const subscriptionsMap = data.result_hashmaps.Subscription;
 							console.log(subscriptionsMap)
 
-                            document.getElementById('JournalSubscriptions').innerText = 'Journal Subscriptions: ' + (subscriptionsMap.JournalSubscription !== undefined ? subscriptionsMap.JournalSubscription : 'N/A');
-                            document.getElementById('NewsletterSubscriptions').innerText = 'Newsletter Subscriptions: ' + (subscriptionsMap.Newsletter !== undefined ? subscriptionsMap.Newsletter : 'N/A');
+                            document.getElementById('JournalSubscriptions').innerText = 'Journal : ' + (subscriptionsMap.JournalSubscription !== undefined ? subscriptionsMap.JournalSubscription : 'N/A');
+                            document.getElementById('NewsletterSubscriptions').innerText = 'Newsletter : ' + (subscriptionsMap.Newsletter !== undefined ? subscriptionsMap.Newsletter : 'N/A');
                         }
 
                         // Update Special Offers

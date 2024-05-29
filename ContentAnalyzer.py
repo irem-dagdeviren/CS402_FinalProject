@@ -25,19 +25,13 @@ class ContentAnalyzer:
         self.instancesdict = {}
         self.result_hashmaps = {}
         self.total_grades_sum = 0
-        self.instagram = False
-        self.facebook = False
-        self.twitter = False
-        self.tripAdvisor = False
-        self.googlemaps = False
-        self.mail = False
-        self.weather = False
+       
 
         
     
 
     def process_urls(self):
-        urls, self.instagram, self.facebook, self.twitter, self.tripAdvisor, self.googlemaps, self.mail, self.weather = self.url_processor.get_all_links(self.input_url)
+        urls = self.url_processor.get_all_links(self.input_url)
         for url in urls:
 
             parsed_url = urlparse(self.input_url)
@@ -129,15 +123,18 @@ class ContentAnalyzer:
                         isSecure = self.input_url.lower().startswith("https:")
                         category_map[item] = 1 if isSecure else 0
                     elif item == "Instagram":
-                        category_map[item] = 1 if self.instagram else 0
+                        category_map[item] = 1 if self.url_processor.instagram else 0
                     elif item == "Facebook":
-                        category_map[item] = 1 if self.facebook else 0
+                        category_map[item] = 1 if self.url_processor.facebook else 0
                     elif item == "Twitter":
-                        category_map[item] = 1 if self.twitter else 0
+                        category_map[item] = 1 if self.url_processor.twitter else 0
                     elif item == "TripAdvisor":
-                        category_map[item] = 1 if self.tripAdvisor else 0
+                        category_map[item] = 1 if self.url_processor.tripadvisor else 0
+                    elif item == "Whatsapp":
+                        print("WP ", self.url_processor.whatsapp)
+                        category_map[item] = 1 if self.url_processor.whatsapp else 0
                     elif item == "Mail":
-                        if(self.mail):
+                        if(self.url_processor.mail):
                             category_map[item] = 1
                         else:
                             present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
@@ -148,7 +145,7 @@ class ContentAnalyzer:
                     elif item == "Photos":
                          category_map[item] = 1 if self.image_processor.total_images > 0 else 0
                     elif item == "MapInformation":
-                        if self.googlemaps:
+                        if self.url_processor.map:
                             category_map[item] = 1
                         else:
                             present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
@@ -184,7 +181,7 @@ class ContentAnalyzer:
                         category_map[item] = 1 if present else 0
                         category_map[item] = 1 if present else 0
                     elif item  == 'Weather':
-                        category_map[item] = 1 if self.weather  else 0
+                        category_map[item] = 1 if self.url_processor.weather  else 0
                     else:
                         present = any(any(syn.lower() in text.lower() for syn in item_synonyms) for text in self.all_unique)
                         category_map[item] = 1 if present else 0
