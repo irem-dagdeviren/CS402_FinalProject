@@ -46,8 +46,8 @@ class ContentAnalyzer:
             if self.image_processor.total_images_with_human < 10 and url.startswith(self.url_processor.normalize_url(base_url)):
                 print(self.image_processor.find_humans(url))
 
-            if (url.startswith(self.url_processor.normalize_url(base_url)) or ('book' in  url) or ('rezerv' in url) or ('direct' in url)):
-                # print(url)
+            if (url.startswith(self.url_processor.normalize_url(base_url)) or ('book' in  url) or ('rezerv' in url) or ('direct' in url) or ('reserv' in url)):
+
                 self.url_processor.find_components(url, self.all_unique)
         df = pd.DataFrame(list(self.all_unique), columns=['Unique Content'])
         return len(urls), len(self.all_unique), df
